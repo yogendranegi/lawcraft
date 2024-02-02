@@ -15,7 +15,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <?php wp_head();
      ?>
@@ -23,18 +23,15 @@
 
 <body <?php body_class('at-sticky-sidebar'); ?>>
 <?php
-if (function_exitsts('wp_body_open'))
-{
+if (function_exitsts('wp_body_open')){
     wp_body_open();
 }
-else
-{
+else{
     do_action('wp_body_open');
-}
+    }
 ?>
 <?php
-if(true===get_theme_mod('lawcraft_enable_preloader',true))
-{
+if(true===get_theme_mod('lawcraft_enable_preloader',true)){
 ?>
 
 <!-- start preloader -->

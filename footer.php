@@ -21,12 +21,13 @@
                         <div class="footer-menu-wrapper">
                             <?php
                                 wp_nav_menu( array(                         
-                                'theme_location'    => 'footer',
-                                'depth'             => 2,
-                                'container'         => 'ul',
-                                'container_class'   => 'navigation',
-                                'container_id'      => 'menu-footer',
-                                'menu_class'        => 'navigation',	                                ));
+                                    'theme_location'    => 'footer',
+                                    'depth'             => 2,
+                                    'container'         => 'ul',
+                                    'container_class'   => 'navigation',
+                                    'container_id'      => 'menu-footer',
+                                    'menu_class'        => 'navigation',	                                
+                                ));
                             ?>
 					    </div>
 					</div>

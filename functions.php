@@ -27,10 +27,10 @@ define('LAWCRAFT_THEME_CONTACT_URL','#');
 
 
 // Register Custom Navigation Walker
-//require_once(get_template_directory() .'/inc/wp_bootstrap_navwalker.php');
+require_once(get_template_directory() .'/inc/wp_bootstrap_navwalker.php');
 
 //Register Required plugin
-//require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
+require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
 
 
 /**

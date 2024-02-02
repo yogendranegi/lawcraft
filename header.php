@@ -22,7 +22,7 @@
 
 <body <?php body_class('at-sticky-sidebar'); ?>>
     <?php
-        if (function_exitsts('wp_body_open')) {
+        if (function_exists('wp_body_open')) {
             wp_body_open();
         }
         else {

@@ -139,3 +139,10 @@ function lawcraft_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'lawcraft_setup' );
+
+
+
+
+
+// include template-function.php
+require_once(get_template_directory() .'/inc/template-functions.php');

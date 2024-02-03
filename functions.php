@@ -146,3 +146,19 @@ add_action( 'after_setup_theme', 'lawcraft_setup' );
 
 // include template-function.php
 require_once(get_template_directory() .'/inc/template-functions.php');
+
+/*
+script goes here
+*/
+
+
+function lawcraft_scripts() {
+
+   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
+
+   wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array(), '3.3.7', true );
+
+}
+
+
+add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );

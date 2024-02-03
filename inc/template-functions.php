@@ -18,7 +18,7 @@
 /**
  * Footer
  */
- if (! function_exists( 'lawcraft_footer_copyrights' ) );
+ if (! function_exists( 'lawcraft_footer_copyrights' ) ):
     function lawcraft_footer_copyrights() {
         ?>
             <div class="row">
@@ -41,10 +41,10 @@
                                 ?>
                                     <a href="<?php echo esc_url( home_url('/' ) ); ?>"><?php bloginfo('name' ); ?></a>
                                     <span><?php esc_html_e(' | Theme by ','lawcraft') ?><a href="<?php echo esc_url(LAWCRAFT_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','lawcraft') ?></a></span>
-                                    <?php
+                                <?php
                             }
                         ?>
-                    <p>
+                    </p>
                 </div>
             </div>
         <?php                        

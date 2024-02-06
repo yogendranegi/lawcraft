@@ -138,18 +138,19 @@ function lawcraft_setup() {
 endif;
 add_action( 'after_setup_theme', 'lawcraft_setup' );
 
+
 /*
-    custom logo
-    */
-    function lawcraft_logo_setup(){
-        add_theme_support('custom-logo', array(
-            'height' => 65,
-            'width' => 350,
-            'flex-height' => true,
-            'flex-width' => true,
-        ));
-    }
-    add_action('after_setup_theme', 'lawcraft_logo_setup');
+custom logo
+*/
+function lawcraft_logo_setup(){
+    add_theme_support('custom-logo', array(
+        'height' => 65,
+        'width' => 350,
+        'flex-height' => true,
+        'flex-width' => true,
+    ));
+}
+add_action('after_setup_theme', 'lawcraft_logo_setup');
 
 
 /*

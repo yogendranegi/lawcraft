@@ -13,7 +13,7 @@
 
 ?>
 
-<header id="<?php echo esc_attr($page_val);?>-inner" class="elementer-menu-anchor   theme-menu-wrapper full-width-menu style1 page" role="banner">
+<header id="<?php echo esc_attr($page_val);?>-inner" class="elementer-menu-anchor theme-menu-wrapper full-width-menu style1 page" role="banner">
     <?php
         if(true===get_theme_mod('lawcraft_enable_highlighted area',true) && is_front_page()){
             ?><a class="skip-link screen-reader-text" herf="#content"><?php esc_html_e('skip to content','lawcraft'); ?> </a> <?php

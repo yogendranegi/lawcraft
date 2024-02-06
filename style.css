@@ -192,6 +192,7 @@ small {
     font-size: 80%;
 }
 
+/*
 .loader-wrapper {
     background: #fff;
     width: 100%;
@@ -206,6 +207,7 @@ small {
     left: 50%;
     margin: -15px 0 0 -15px;
 }
+*/
 
 @keyframes spinner_preloader {
   0% {

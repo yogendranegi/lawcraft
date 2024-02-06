@@ -13,27 +13,7 @@
 </div></div>
 <!-- Begin Footer Section -->
 <footer id="footer">
-	<div class="container">
-		<?php
-			if ( has_nav_menu( 'footer' ) ) {
-				?>
-				    <div class="footer-menu">
-                        <div class="footer-menu-wrapper">
-                            <?php
-                                wp_nav_menu( array(                         
-                                    'theme_location'    => 'footer',
-                                    'depth'             => 2,
-                                    'container'         => 'ul',
-                                    'container_class'   => 'navigation',
-                                    'container_id'      => 'menu-footer',
-                                    'menu_class'        => 'navigation',	                                
-                                ));
-                            ?>
-					    </div>
-					</div>
-				<?php
-			}
-		?>
+	<div class="container">		
         <div class="row">
             <div class="footer-widgets-wrapper">
                 <?php

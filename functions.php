@@ -57,8 +57,6 @@ function lawcraft_check_theme_setup( $oldtheme_name, $oldtheme ){
 }
 add_action( 'after_switch_theme', 'lawcraft_check_theme_setup', 10, 2  );
 
-
-
 if ( ! function_exists( 'lawcraft_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -140,25 +138,35 @@ function lawcraft_setup() {
 endif;
 add_action( 'after_setup_theme', 'lawcraft_setup' );
 
+/*
+    custom logo
+    */
+    function lawcraft_logo_setup(){
+        add_theme_support('custom-logo', array(
+            'height' => 65,
+            'width' => 350,
+            'flex-height' => true,
+            'flex-width' => true,
+        ));
+    }
+    add_action('after_setup_theme', 'lawcraft_logo_setup');
 
 
+/*
+script goes here
+*/
+function lawcraft_scripts() {
+
+    wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array(), '3.3.7', true );
+
+}
+add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
 
 
 // include template-function.php
 require_once(get_template_directory() .'/inc/template-functions.php');
 
-/*
-script goes here
-*/
-
-
-function lawcraft_scripts() {
-
-   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
-
-   wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array(), '3.3.7', true );
-
-}
-
-
-add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
+// include template-tags.php
+require_once(get_template_directory() .'/inc/template-tags.php');

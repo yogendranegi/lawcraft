@@ -151,9 +151,9 @@
             <div class="side-menu">
                 <?php
                     /**
-		              * Hook - lawcraft_action_search_content
-		              *
-		            * @hooked lawcraft_search_content - 10
+                    * Hook - lawcraft_action_search_content
+                    *
+                    * @hooked lawcraft_search_content - 10
 		            */
                     do_action('lawcraft_action_search_content');
                 ?>
@@ -181,7 +181,7 @@
 
 <?php
     if(true===get_theme_mod('lawcraft_enable_highlight_area',true)){
-         /**
+        /**
 	    * Hook - lawcraft_action_highlight_area
 	    *
 	    * @hooked lawcraft_highlight_area - 10

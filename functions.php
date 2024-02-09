@@ -153,6 +153,55 @@ function lawcraft_logo_setup(){
 add_action('after_setup_theme', 'lawcraft_logo_setup');
 
 
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function lawcraft_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'lawcraft' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+    register_sidebar(array(
+        'name'          => esc_html__( 'Footer 2', 'lawcraft'),
+        'id'            => 'footer-2',
+        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    register_sidebar(array(
+        'name'          => esc_html__('Footer 3', 'lawcraft'),
+        'id'            => 'footer-3',
+        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2/',
+    ));
+
+    register_sidebar(array(
+        'name'          => esc_html__( 'Footer ', 'lawcraft'),
+        'id'            => 'footer-4',
+        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+        'before-widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   =>'</h2>',
+    ));
+}
+add_action( 'widgets_init', 'lawcraft_widgets_init' );
+
+
 /*
 script goes here
 */

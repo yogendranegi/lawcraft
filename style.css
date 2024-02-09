@@ -317,6 +317,7 @@ small {
     left: 50%;
     margin: -15px 0 0 -15px;
 }
+*/
 
 @keyframes spinner_preloader {
     0% {
@@ -412,7 +413,7 @@ ul.navigation>li {
     margin-top: 40px;
 }
 
-.navigaton>li {
+#menu-header1>li {
     margin: 15px;
     padding: 15px;
     margin-top: 40px;

@@ -209,8 +209,9 @@ function lawcraft_scripts() {
 
     wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
+    wp_enqueue_style( 'dmsans-google-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&display=swap', array(), '1.0');
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.3.7', true );
-    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '3.3.7', true );
+    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
 

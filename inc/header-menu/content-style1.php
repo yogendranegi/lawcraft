@@ -29,8 +29,8 @@
             <div class="menutext">
                 <div class="col-md-12">
                     <div class="topbar-items">
-                        <span><?php esc_html_e('call us:8889-123-4567','lawcraft');?> </span> 
-                        <span><?php esc_html_e('Email us at:info@example.com','lawcraft');?> </span>
+                        <span class="phone"><?php esc_html_e('call us:8889-123-4567','lawcraft');?> </span> 
+                        <span class="email"><?php esc_html_e('Email us at:info@example.com','lawcraft');?> </span>
                     </div>
                 </div>
             </div>          
@@ -39,7 +39,7 @@
     <div id="header-main" class="header-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3 col-xs-9 col-sm-9">
                     <div class="logo">
                         
                         <?php 
@@ -101,7 +101,7 @@
                 
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9 col-xs-3 col-sm-3">
                     <div class="top-menu-wrapper">                       
                         <nav class="top-menu" role="navigation" aria-label="<?php esc_attr_e('primary','lawraft' ); ?>">
                             <div class="menu-header">
@@ -125,16 +125,7 @@
                             </div>
                         </nav> 
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="top-menu-button">                       
-                        <div class="appoint-button">
-                            <a href="#" class="apoointment-button">
-                                <span class="appoint"><?php esc_html_e( 'Appointment', 'lawcraft' ); ?></span>
-                                </a>
-                        </div>                        
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>    

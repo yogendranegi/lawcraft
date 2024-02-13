@@ -25,29 +25,27 @@
                 <div class="copyrights">
                     <p>
                         <?php
-
-                            if("" != esc_html(get_theme_mod( 'lawcraft_footer_copyright_text'))) {
+                            if("" != esc_html(get_theme_mod( 'lawcraft_footer_copyright_text'))) :
                                 echo esc_html(get_theme_mod( 'lawcraft_footer_copyright_text'));
-                                if(get_theme_mod('blogson_en_footer_credits',true)) {
-                                    ?><span><?php esc_html_e(' | Theme by ','lawcraft') ?><a href="<?php echo esc_url(LAWCRAFT_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','lawcraft') ?></a></span>
-                                    <?php  
-                                }
-                            }
-                            else{
+                                if(get_theme_mod('lawcraft_en_footer_credits',true)) :
+                                    ?><span><?php esc_html_e(' | Theme by ','lawcraft') ?><a href="<?php echo esc_url(LAWCRAFT_THEME_AUTH); ?>" target="_blank" rel="nofollow noopener"><?php esc_html_e('Spiracle Themes','lawcraft') ?></a></span>
+                                    <?php   
+                                endif;
+                            else :
                                 echo date_i18n(
-                                    /*translators: Copyright data format, see https://secure.php.net/date */
-                                    _x( 'Y', 'copyright data format','lawcraft')
+                                    /* translators: Copyright date format, see https://secure.php.net/date */
+                                    _x( 'Y', 'copyright date format', 'lawcraft' )
                                 );
                                 ?>
-                                    <a href="<?php echo esc_url( home_url('/' ) ); ?>"><?php bloginfo('name' ); ?></a>
-                                    <span><?php esc_html_e(' | Theme by ','lawcraft') ?><a href="<?php echo esc_url(LAWCRAFT_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','lawcraft') ?></a></span>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+                                    <span><?php esc_html_e(' | Theme by ','lawcraft') ?><a href="<?php echo esc_url(LAWCRAFT_THEME_AUTH); ?>" target="_blank" rel="nofollow noopener"><?php esc_html_e('Spiracle Themes','lawcraft') ?></a></span>
                                 <?php
-                            }
+                            endif;
                         ?>
                     </p>
                 </div>
             </div>
-        <?php                        
+        <?php    
     }
 endif;
 add_action( 'lawcraft_action_footer', 'lawcraft_footer_copyrights' );

@@ -159,45 +159,19 @@ add_action('after_setup_theme', 'lawcraft_logo_setup');
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function lawcraft_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'lawcraft' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-    register_sidebar(array(
-        'name'          => esc_html__( 'Footer 2', 'lawcraft'),
-        'id'            => 'footer-2',
-        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));
-
-    register_sidebar(array(
-        'name'          => esc_html__('Footer 3', 'lawcraft'),
-        'id'            => 'footer-3',
-        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2/',
-    ));
-
-    register_sidebar(array(
-        'name'          => esc_html__( 'Footer ', 'lawcraft'),
-        'id'            => 'footer-4',
-        'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
-        'before-widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   =>'</h2>',
-    ));
+	//Footer widget columns
+    $widget_num = absint(get_theme_mod( 'lawcraft_footer_widgets', '4' ));
+    for ( $i=1; $i <= $widget_num; $i++ ) :
+        register_sidebar( array(
+            'name'          => esc_html__( 'Footer Column', 'lawcraft' ) . $i,
+            'id'            => 'footer-' . $i,
+            'description'   => '',
+            'before_widget' => '<div id="%1$s" class="section %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="widget-title" itemprop="name">',
+            'after_title'   => '</h4>',
+        ) );
+    endfor;
 }
 add_action( 'widgets_init', 'lawcraft_widgets_init' );
 
@@ -212,6 +186,7 @@ function lawcraft_scripts() {
     wp_enqueue_style( 'dmsans-google-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&display=swap', array(), '1.0');
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.3.7', true );
     wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
+    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 }
 add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
 

@@ -10,30 +10,32 @@
  */
 
 ?>
-</div></div>
-<!-- Begin Footer Section -->
-<footer id="footer">
-	<div class="container">		
-        <div class="row">
-            <div class="footer-widgets-wrapper">
-                <?php
-                    if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' )  ) {
-                        get_sidebar( 'footer' );
-                    }
-                ?>	
-            </div>
-        </div>
-        <?php
-            /**
-             * Hook - lawcraft_action_footer.
-             *
-             * @hooked lawcraft_footer_copyrights - 10
-             */
-            do_action( 'lawcraft_action_footer' );
-        ?>
 	</div>
-</footer>
-<?php wp_footer(); ?>
+	<!-- Begin Footer Section -->
+	<footer id="footer" class="lawcraft-footer" itemscope itemtype="https://schema.org/WPFooter">
+		<div class="container footer-widgets">
+			<div class="row">
+				<div class="footer-widgets-wrapper">
+	                <?php get_sidebar( 'footer' ); ?>
+	            </div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container copyrights">
+				<div class="row">
+					<div class="footer-copyrights-wrapper">
+						<?php
+							/**
+							 * Hook - lawcraft_action_footer.
+							 *
+							 * @hooked lawcraft_footer_copyrights - 10
+							 */
+							do_action( 'lawcraft_action_footer' );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+    </footer>
+	<?php wp_footer(); ?>
 </body>
-</html>
-<!-- end footer  --> 

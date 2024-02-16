@@ -827,7 +827,112 @@ ul {
     }
 }
 
+/**
+====================================================================
+  blog-section
+====================================================================
+*/
+#post-wrapper {
+    padding: 50px;
+    padding-top: 25px;
+    padding-left: 0;
+}
 
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    /* margin-top: 41px; */
+
+}
+
+.blog-image-wrapper {
+    padding-top: 39px;
+    padding-bottom: 40px
+}
+
+.blog-content-wrapper {
+    background: #f8f8f8;
+    padding: 55px;
+    margin-top: -70px;
+    padding-left: 30px;
+}
+
+.read-more {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    border-top: 1px solid #6055554a;
+}
+
+.meta {
+    margin: -60px 0px 0px 450px;
+    padding: 20px;
+    background: #0000006e;
+    position: relative;
+}
+
+
+.single .entry-title a {
+    color: #9e6906;
+
+}
+
+.single .entry-title {
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+
+
+.meta span {
+    color: #fff;
+    padding: 2px;
+}
+
+.meta span a {
+    color: #fff;
+}
+
+.meta span .blog-post {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    row-gap: 50px;
+    margin: 54px 110px 0 0px;
+    padding: 5px 0px;
+}
+
+
+.blog .blog-content-wrapper h2.entry-title {
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 2px;
+}
+
+/**
+====================================================================
+  Sidebar CSS
+====================================================================
+*/
+aside .widget {
+    margin-top: 32px;
+    border-bottom: 2px solid #b7b7b77d;
+    background: #efefef96;
+}
+
+aside .widget h2 {
+    padding: 0;
+}
+
+aside .widget:last-child {
+    border-bottom: none;
+}
+
+
+#sidebar-wrapper {
+    background: #F8F8F8;
+    margin-top: 63px;
+}
 
 /**
 ====================================================================

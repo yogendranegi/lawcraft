@@ -172,6 +172,18 @@ function lawcraft_widgets_init() {
             'after_title'   => '</h4>',
         ) );
     endfor;
+
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Blog Sidebar', 'lawcraft' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'lawcraft_widgets_init' );
 
@@ -189,6 +201,31 @@ function lawcraft_scripts() {
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 }
 add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
+
+
+/** 
+* Excerpt More
+*/
+function lawcraft_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+    return '&hellip;';
+}
+add_filter('excerpt_more', 'lawcraft_excerpt_more');
+
+
+/** 
+* Custom excerpt length.
+*/
+function lawcraft_excerpt_length($length) {
+	if ( is_admin() ) {
+		return $length;
+	}
+	return 30;
+}
+add_filter('excerpt_length', 'lawcraft_excerpt_length');
+
 
 
 // include template-function.php

@@ -95,6 +95,9 @@ function lawcraft_setup() {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
         'primary' => esc_html__( 'Primary', 'lawcraft' ),
+        'footer' => esc_html__( 'Footer', 'lawcraft' ),
+		'social' => esc_html__( 'Sidebar Social', 'lawcraft' ),
+		'footer-social' => esc_html__( 'Footer Social', 'lawcraft' )
     ) );
 
     /*
@@ -120,19 +123,20 @@ function lawcraft_setup() {
     /**
      * lawcraft theme info
      */
-    //require get_template_directory() . '/inc/theme-info.php';
+    require get_template_directory() . '/inc/theme-info.php';
 
     /*
     * About page instance
     */
-    /*$config = array();
-    LawCraft_About_Page::lawcraft_init( $config );
+    //$config = array();
+    //LawCraft_About_Page::lawcraft_init( $config );
 
-    if ( is_customize_preview() ) {
+    /*if ( is_customize_preview() ) {
         require get_template_directory() . '/inc/starter-content.php';
         add_theme_support( 'starter-content', lawcraft_get_starter_content() );
     }
     */
+
 
 }
 endif;
@@ -183,25 +187,20 @@ function lawcraft_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    
 
 }
 add_action( 'widgets_init', 'lawcraft_widgets_init' );
 
-
-/*
-script goes here
+/**
+* Admin Scripts
 */
-function lawcraft_scripts() {
-
-    wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
-    wp_enqueue_style( 'dmsans-google-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&display=swap', array(), '1.0');
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.3.7', true );
-    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
-    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
-}
-add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
-
+if ( ! function_exists( 'lawcraft_admin_scripts' ) ) :
+    function lawcraft_admin_scripts($hook) {
+          wp_enqueue_style( 'lawcraft-info-css', get_template_directory_uri() . '/css/lawcraft-theme-info.css', false ); 
+    }
+    endif;
+    add_action( 'admin_enqueue_scripts', 'lawcraft_admin_scripts' );
 
 /** 
 * Excerpt More
@@ -226,6 +225,64 @@ function lawcraft_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'lawcraft_excerpt_length');
 
+/**
+ * Display Dynamic CSS.
+ */
+function blogson_dynamic_css_wrap() {
+	require_once( get_parent_theme_file_path( '/css/dynamic.css.php' ) );  
+	?>
+  		<style type="text/css" id="lawcraft-dynamic-style">
+    		<?php echo lawcraft_dynamic_css_stylesheet(); ?>
+  		</style>
+	<?php 
+}
+add_action( 'wp_head', 'blogson_dynamic_css_wrap' );
+
+
+
+/*
+script goes here
+*/
+function lawcraft_scripts() {
+
+    wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
+    wp_style_add_data( 'lawcraft-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'lawcraft-style' );
+    wp_register_style( 'lawcraft-blocks-frontend', get_template_directory_uri() . '/css/blocks-frontend.css', array(), wp_get_theme()->get('Version'));
+	wp_style_add_data( 'lawcraft-blocks-frontend', 'rtl', 'replace' );
+	wp_enqueue_style( 'lawcraft-blocks-frontend' );
+
+    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
+	wp_enqueue_style( 'm-customscrollbar', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.css', array(), '3.1.5');
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '3.7.2');
+
+    wp_enqueue_style( 'dmsans-google-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&display=swap', array(), '1.0');
+
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	
+	wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array('jquery'), '1.3', true );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.2', true );
+	wp_enqueue_script( 'resize-sensor', get_template_directory_uri() . '/js/ResizeSensor.js',array(),'1.0.0', true );	
+	wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js',array(),'1.7.0', true );
+	wp_enqueue_script( 'm-customscrollbar-js', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.js',array(),'3.1.5', true );	
+	wp_enqueue_script( 'html5shiv',get_template_directory_uri().'/js/html5shiv.js',array(), '3.7.3');
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'respond', get_template_directory_uri().'/js/respond.js' );
+    wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.3.7', true );
+    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
+    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
+}
+add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
+
+
+
 
 
 // include template-function.php
@@ -233,3 +290,8 @@ require_once(get_template_directory() .'/inc/template-functions.php');
 
 // include template-tags.php
 require_once(get_template_directory() .'/inc/template-tags.php');
+
+
+//Customizer additions.
+ 
+require get_parent_theme_file_path() . '/inc/customizer/customizer.php';

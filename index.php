@@ -48,7 +48,12 @@ get_header(); ?>
                                             </div>
                                             <div id="sidebar-wrapper" class="col-md-3">
                                                 <?php 
+                                                    if(true===get_theme_mod('lawcraft_enable_menu_left_sidebar',false)) :
                                                     get_sidebar('sidebar-1') 
+                                                    
+                                                ?>
+                                                <?php
+                                                endif;
                                                 ?>
                                             </div>
                                         <?php
@@ -83,12 +88,12 @@ get_header(); ?>
                         else if('left'=== esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
                             ?>
                                 <?php
-                                    if(is-active_sidebar('sidebar-1')){
+                                    if(is_active_sidebar('sidebar-1')){
                                         ?>
                                             <div id="sidebar-wrapper" class="col-md-3">
                                                 <?php get_sidebar('sidebar-1'); ?>                                                
                                             </div>
-                                            <div id="post-wrapper" class="cool-md-9">
+                                            <div id="post-wrapper" class="col-md-9">
                                                 <?php
                                                     if(have_posts()){
                                                         while(have_posts()) {

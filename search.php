@@ -8,8 +8,8 @@
  */
 
 get_header();
-lawcraft_before_title();
-lawcraft_after_title();
+//lawcraft_before_title();
+//lawcraft_after_title();
 ?>
 <div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
     <main id="main" class="site-main" role="main">
@@ -24,7 +24,7 @@ lawcraft_after_title();
                                             <?php
                                             if(have_posts() ) : ?>
                                                 <div class="search-content">
-                                                    <h1 class="page-search"><?php printf( esc_html__('Search Results for: %s','blogson'),'<span>' .get_search_query() . '</span>' ); ?> </h1>
+                                                    <h1 class="page-search"><?php printf( esc_html__('Search Results for: %s','lawcraft'),'<span>' .get_search_query() . '</span>' ); ?> </h1>
                                                 </div>
                                                 <!-- .page-header -->
 
@@ -60,7 +60,7 @@ lawcraft_after_title();
                                             if(have_posts()) : ?>
 
                                                 <div class="search-content">
-                                                    <h1 class="page-search"><?php printf(esc_html__('Search Results for: %s','blogson'),'<span>' . get_search_query(). '</span>')?></h1>
+                                                    <h1 class="page-search"><?php printf(esc_html__('Search Results for: %s','lawcraft'),'<span>' . get_search_query(). '</span>')?></h1>
                                                 </div>
                                                 <!-- page-header-->
 
@@ -91,7 +91,7 @@ lawcraft_after_title();
                                         <?php
                                         if(have_posts()): ?>
                                             <div class="search-content">
-                                                <h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'blogson' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                                                <h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'lawcraft' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                                             </div>
                                             <!-- page-header-->
                                             <?php

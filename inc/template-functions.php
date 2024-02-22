@@ -13,6 +13,17 @@
     }
  endif;
  add_action( 'lawcraft_action_header', 'lawcraft_header_menu_styles' ); 
+
+ /**
+ * Function for Minimizing dynamic CSS
+ */
+function lawcraft_minimize_css($css){
+    $css = preg_replace('/\/\*((?!\*\/).)*\*\//', '', $css);
+    $css = preg_replace('/\s{2,}/', ' ', $css);
+    $css = preg_replace('/\s*([:;{}])\s*/', '$1', $css);
+    $css = preg_replace('/;}/', '}', $css);
+    return $css;
+}
  
 
 /**
@@ -49,3 +60,4 @@
     }
 endif;
 add_action( 'lawcraft_action_footer', 'lawcraft_footer_copyrights' );
+

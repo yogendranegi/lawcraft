@@ -415,6 +415,10 @@ ul.navigation>li {
     font-weight: 600;
 }
 
+ul.navigation>li a {
+    color: rgb(0, 17, 255);
+}
+
 #menu-header1>li {
     margin: 15px;
     padding: 15px;
@@ -832,10 +836,10 @@ ul {
   blog-section
 ====================================================================
 */
-#post-wrapper {
+.blog #post-wrapper {
     padding: 50px;
     padding-top: 25px;
-    padding-left: 0;
+    padding-left: 25px;
 }
 
 .blog-post img {
@@ -857,20 +861,20 @@ ul {
     padding-left: 30px;
 }
 
-.read-more {
+.blog .read-more {
     position: relative;
     padding-top: 20px;
     padding-bottom: 0px;
     border-top: 1px solid #6055554a;
 }
 
-.meta {
-    margin: -60px 0px 0px 450px;
+.blog .meta {
+    margin: -64px 0px 0px 0px;
     padding: 20px;
     background: #0000006e;
     position: relative;
+    float: right;
 }
-
 
 .single .entry-title a {
     color: #9e6906;
@@ -883,16 +887,18 @@ ul {
 }
 
 
-.meta span {
+.blog .meta span {
     color: #fff;
     padding: 2px;
 }
 
-.meta span a {
+.blog .meta span a {
     color: #fff;
+    vertical-align: baseline;
+    margin-left: 3px;
 }
 
-.meta span .blog-post {
+.blog .meta span .blog-post {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -911,17 +917,148 @@ ul {
 
 /**
 ====================================================================
+  single-blog-section
+====================================================================
+*/
+.single .blog-post img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 38px;
+}
+
+.single .blog-post img {
+    max-width: 100%;
+    height: auto;
+}
+
+.single .meta {
+    margin: -64px 0px 0px 0px;
+    padding: 20px;
+    background: #0000006e;
+    position: relative;
+    color: #fff;
+    float: right;
+}
+
+.single .meta span a {
+    color: #fff;
+    vertical-align: baseline;
+    margin-left: 3px;
+}
+
+.single .blog-content-wrapper {
+    background: #f8f8f8;
+    padding: 55px;
+    margin-top: -70px;
+    padding-left: 30px;
+}
+
+.single #post-wrapper {
+    padding: 50px;
+    padding-top: 25px;
+    padding-left: 0;
+}
+
+
+.single .blog-image-wrapper {
+    padding-top: 39px;
+    padding-bottom: 40px
+}
+
+.single .meta span .blog-post {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    row-gap: 50px;
+    margin: 54px 110px 0 0px;
+    padding: 5px 0px;
+}
+
+
+.single .blog .blog-content-wrapper h2.entry-title {
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 2px;
+}
+
+/**
+====================================================================
+  pagination
+====================================================================
+*/
+.blog .pagination {
+    display: block;
+    text-align: center;
+    margin: 24px 0px;
+    border-radius: 13px;
+}
+
+.blog .pagination .page-numbers {
+    margin: 12px;
+}
+
+.blog .pagination .nav-links .current {
+    background: #4D5EDD;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.nav-previous {
+    display: inline-block;
+}
+
+.nav-previous a .post-title {
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFCC00;
+}
+
+.nav-next a .post-title {
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFCC00;
+}
+
+
+.nav-next {
+    display: inline-block;
+    float: right;
+    text-align: end;
+}
+
+.nav-links {
+    border-top: 1px solid #01010121;
+    padding: 12px;
+    border-bottom: 1px solid #01010121;
+}
+
+.post-title :hover {
+    text-decoration: none;
+}
+
+.post-navigation .nav-links span.screen-reader-text {
+    pointer-events: none;
+}
+
+/**
+====================================================================
   Sidebar CSS
 ====================================================================
 */
 aside .widget {
     margin-top: 32px;
     border-bottom: 2px solid #b7b7b77d;
-    background: #efefef96;
 }
 
 aside .widget h2 {
     padding: 0;
+}
+
+.meta i {
+    padding: 5px;
 }
 
 aside .widget:last-child {
@@ -932,6 +1069,27 @@ aside .widget:last-child {
 #sidebar-wrapper {
     background: #F8F8F8;
     margin-top: 63px;
+}
+
+
+aside #searchform div {
+    display: flex;
+    padding: 12px 0px;
+}
+
+aside #searchform div>input {
+    height: 28px;
+    border: none;
+}
+
+aside #searchform div {
+    color: #555;
+    display: flex;
+    padding: 2px;
+    border: 1px solid #504f4f3b;
+    border-radius: 5px;
+    border-bottom: none;
+
 }
 
 /**

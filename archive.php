@@ -9,8 +9,8 @@
 
 
 get_header();
-lawcraft_before_title();
-lawcraft_after_title();
+//lawcraft_before_title();
+//lawcraft_after_title();
 
 ?>
 

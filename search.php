@@ -17,7 +17,7 @@ get_header();
             <div class="content-inner">
                 <div class="row">
                     <?php
-                            if('right'===esc_html(get_theme_mod('lawraft_blog_sidebar_layout','right'))) {
+                            if('right'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
                                 ?>
                                     <div class="col-md-9">
                                         <div id="primary" class="content-area">

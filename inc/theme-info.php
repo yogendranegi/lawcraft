@@ -6,15 +6,15 @@
  */
 
 
-if ( ! class_exists( 'lawcraft_About_Page' ) ) {
+if ( ! class_exists( 'Lawcraft_About_Page' ) ) {
 	/**
 	 * Singleton class used for generating the about page of the theme.
 	 */
-	class lawcraft_About_Page {
+	class Lawcraft_About_Page {
 		/**
 		 * Define the version of the class.
 		 *
-		 * @var string $version The lawcraft_About_Page class version.
+		 * @var string $version The Lawcraft_About_Page class version.
 		 */
 		private $version = '1.0.0';
 		/**
@@ -54,21 +54,21 @@ if ( ! class_exists( 'lawcraft_About_Page' ) ) {
 		 */
 		private $notification;
 		/**
-		 * The single instance of lawcraft_About_Page
+		 * The single instance of Lawcraft_About_Page
 		 *
-		 * @var lawcraft_About_Page $instance The lawcraft_About_Page instance.
+		 * @var Lawcraft_About_Page $instance The Lawcraft_About_Page instance.
 		 */
 		private static $instance;
 		/**
-		 * The Main lawcraft_About_Page instance.
+		 * The Main Lawcraft_About_Page instance.
 		 *
-		 * We make sure that only one instance of lawcraft_About_Page exists in the memory at one time.
+		 * We make sure that only one instance of Lawcraft_About_Page exists in the memory at one time.
 		 *
 		 * @param array $config The configuration array.
 		 */
 		public static function lawcraft_init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof lawcraft_About_Page ) ) {
-				self::$instance = new lawcraft_About_Page;				
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Lawcraft_About_Page ) ) {
+				self::$instance = new Lawcraft_About_Page;				
 				self::$instance->config = $config;
 				self::$instance->lawcraft_setup_config();	
 			}
@@ -90,8 +90,6 @@ if ( ! class_exists( 'lawcraft_About_Page' ) ) {
 			$this->theme_slug    = $theme->get_template();			
 				
 		}	
-		
-
 	}
 }
 
@@ -102,7 +100,7 @@ if ( ! class_exists( 'lawcraft_About_Page' ) ) {
 add_action('admin_menu', 'lawcraft_add_menu');
 
 function lawcraft_add_menu() {
-     add_theme_page(esc_html__('About lawcraft Theme','lawcraft'), esc_html__('lawcraft Info','lawcraft'),'manage_options', esc_html__('lawcraft-theme-info','lawcraft'), esc_html__('lawcraft_theme_info','lawcraft'));
+     add_theme_page(esc_html__('About Law Craft Theme','lawcraft'), esc_html__('LawCraft Info','lawcraft'),'manage_options', esc_html__('lawcraft-theme-info','lawcraft'), esc_html__('lawcraft_theme_info','lawcraft'));
 }
 
 /**
@@ -115,7 +113,7 @@ function lawcraft_theme_info() {
 			<div class="row">
 				<div class="col-md-12">
 					<div class="title">
-						<h2><?php esc_html_e( 'Thank you for using lawcraft Free WordPress theme', 'lawcraft' ); ?></h2>
+						<h2><?php esc_html_e( 'Thank you for using LawCraft Free WordPress theme', 'lawcraft' ); ?></h2>
 						<div class="title-content">
 							<p><?php esc_html_e( 'Are you looking for a WordPress theme to easily customize all aspects of your website? Look no further than lawcraft WordPress Theme and Elementor Page Builder. This powerful combination allows users to easily customize the fundamental elements of their WordPress website with no coding needed. lawcraft is an attractive and modern theme, allowing users to create beautiful websites in minutes. It features a mobile-friendly design, responsive layout, easy customization options, unlimited color schemes, a large collection of fonts and much more. With Elementor Page Builder users can quickly design stunning pages that look professional. Users have full control over what content is displayed where on their site as well as being able to create custom landing pages with ease. All this without writing any code!', 'lawcraft' ); ?></p>
 						</div>
@@ -129,7 +127,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-visibility"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DEMO', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DEMO', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -139,7 +137,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-format-aside"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_DOC_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DOCUMENTATION', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_DOC_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DOCUMENTATION', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -149,7 +147,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-video-alt2"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_VIDEOS_URL); ?>" target="_blank"><?php esc_html_e( 'VIDEO TUTORIALS', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_VIDEOS_URL); ?>" target="_blank"><?php esc_html_e( 'VIDEO TUTORIALS', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -159,7 +157,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-sos"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_SUPPORT_URL); ?>" target="_blank"><?php esc_html_e( 'ASK FOR SUPPORT', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_SUPPORT_URL); ?>" target="_blank"><?php esc_html_e( 'ASK FOR SUPPORT', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -170,7 +168,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-star-filled"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'RATE OUR THEME', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'RATE OUR THEME', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -180,7 +178,7 @@ function lawcraft_theme_info() {
 							<span class="dashicons dashicons-admin-tools"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(lawcraft_THEME_CHANGELOGS_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW CHANGELOGS', 'lawcraft' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LAWCRAFT_THEME_CHANGELOGS_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW CHANGELOGS', 'lawcraft' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -194,7 +192,7 @@ function lawcraft_theme_info() {
 								<thead> 
 									<tr> 
 									 	<td class="thead-column1"><strong><h4><?php esc_html_e( 'Feature', 'lawcraft' ); ?></h4></strong></td>
-										<td class="thead-column2"><strong><h4><?php esc_html_e( 'lawcraft Free', 'lawcraft' ); ?></h4></strong></td>
+										<td class="thead-column2"><strong><h4><?php esc_html_e( 'LawCraft Free', 'lawcraft' ); ?></h4></strong></td>
 										<td class="thead-column3"><strong><h4><?php esc_html_e( 'Pro Addon Plugin', 'lawcraft' ); ?></h4></strong></td>
 									</tr> 
 								</thead>
@@ -333,7 +331,7 @@ function lawcraft_theme_info() {
 									<tr class="last-row"> 
 					 					<td class="tbody-column1"></td>
 					 					<td class="tbody-column2"></td>
-					 					<td class="tbody-column3"><a class="button button-primary button-large" href="https://www.spiraclethemes.com/lawcraft-pro-addons/" target="_blank"><?php esc_html_e( 'Upgrade to PRO', 'lawcraft' ); ?></a></td>
+					 					<td class="tbody-column3"><a class="button button-primary button-large" href="https://www.spiraclethemes.com/lawcraft-theme/" target="_blank"><?php esc_html_e( 'Upgrade to PRO', 'lawcraft' ); ?></a></td>
 									</tr> 
 				   				</tbody>
 							</table>
@@ -345,7 +343,7 @@ function lawcraft_theme_info() {
 				<div class="col-md-12">
 					<div class="title">
 						<div class="review-content">
-							<p><?php esc_html_e( ' Please ', 'lawcraft' )  ?><a href="<?php echo esc_url(lawcraft_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'rate our theme', 'lawcraft' ); ?></a>
+							<p><?php esc_html_e( ' Please ', 'lawcraft' )  ?><a href="<?php echo esc_url(LAWCRAFT_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'rate our theme', 'lawcraft' ); ?></a>
 							<?php esc_html_e( '★★★★★ to help us spread the word. Thank you from the Spiracle Themes team!', 'lawcraft' ); ?></p>
 						</div>
 					</div>

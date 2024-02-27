@@ -27,7 +27,7 @@ function lawcraft_customizer_preloader_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_preloader_settings_title', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_preloader_settings_title', 
 		array(
 		    'label'       => esc_html__( 'Preloader Settings', 'lawcraft' ),
 		    'section'     => 'lawcraft_preloader_settings',
@@ -47,7 +47,7 @@ function lawcraft_customizer_preloader_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_preloader', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_preloader', 
 		array(
 		    'label'       => esc_html__( 'Show Preloader', 'lawcraft' ),
 		    'section'     => 'lawcraft_preloader_settings',

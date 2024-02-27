@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if lawcraft_Radio_Image_Control exists and WP_Customize_Control does not exsist.
-if ( class_exists('lawcraft_Radio_Image_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
+// Exit if Lawcraft_Radio_Image_Control exists and WP_Customize_Control does not exsist.
+if ( class_exists('Lawcraft_Radio_Image_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
@@ -18,7 +18,7 @@ if ( class_exists('lawcraft_Radio_Image_Control') && ! class_exists( 'WP_Customi
  *
  * @access public
  */
-class lawcraft_Radio_Image_Control extends WP_Customize_Control {
+class Lawcraft_Radio_Image_Control extends WP_Customize_Control {
 	
 	/**
 	 * Declare the control type.

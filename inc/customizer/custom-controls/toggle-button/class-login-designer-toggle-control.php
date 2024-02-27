@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if lawcraft_Toggle_Control exists and WP_Customize_Control does not exsist.
-if ( class_exists('lawcraft_Toggle_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
+// Exit if Lawcraft_Toggle_Control exists and WP_Customize_Control does not exsist.
+if ( class_exists('Lawcraft_Toggle_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
@@ -18,7 +18,7 @@ if ( class_exists('lawcraft_Toggle_Control') && ! class_exists( 'WP_Customize_Co
  *
  * @access public
  */
-class lawcraft_Toggle_Control extends WP_Customize_Control {
+class Lawcraft_Toggle_Control extends WP_Customize_Control {
 
 	/**
 	 * The type of customize control.

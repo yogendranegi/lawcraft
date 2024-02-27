@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-class lawcraft_Rating_Notice {
+class Lawcraft_Rating_Notice {
     private $past_date;
 
     public function __construct() {
@@ -54,7 +54,7 @@ class lawcraft_Rating_Notice {
                         <img class="lawcraft-logo" src="'.get_theme_file_uri().'/inc/activation/img/logo-spiracle.png">
                         </div>
                         <div>
-                            <h3>Thank you for using lawcraft WordPress Theme to build this website!</h3>
+                            <h3>Thank you for using LawCraft WordPress Theme to build this website!</h3>
                             <p>Could you please do us a BIG favor and give it a 5-star rating on WordPress? Just to help us spread the word and boost our motivation.</p>
                             <p>
                                 <a href="https://wordpress.org/support/theme/lawcraft/reviews/?filter=5" target="_blank" class="lawcraft-you-deserve-it button button-primary">OK, you deserve it!</a>
@@ -151,4 +151,4 @@ class lawcraft_Rating_Notice {
     }
 }
 
-new lawcraft_Rating_Notice();
+new Lawcraft_Rating_Notice();

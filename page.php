@@ -13,9 +13,11 @@
  */
 
 get_header();
-//lawcraft_before_title();
-//lawcraft_get_title();
-//lawcraft_after_title();
+lawcraft_before_title();
+if(true===get_theme_mod( 'lawcraft_enable_page_title',true)) :
+	do_action('lawcraft_get_page_title',false,false,false,false);
+endif;
+lawcraft_after_title();
 
 ?>
 

@@ -49,7 +49,7 @@
         /*-- Mobile menu --*/
         if ($('#navbar-collapse-2').length) {
             $('#navbar-collapse-2 .navigation li.dropdown').append(function () {
-                return '<i class="fas fa-angle-down" aria-hd="true"></i>';
+                return '<i class="bi bi-caret-down-fill" aria-hd="true"></i>';
             });
             $('#navbar-collapse-2 .navigation li.dropdown .fas').on('click', function () {
                 $(this).parent('li').children('ul').slideToggle();

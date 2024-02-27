@@ -23,7 +23,7 @@
             <h5 class="entry-title">
                 <?php
                     if ( is_sticky() && is_home() ) :
-                        echo "<i class='fas fa-thumbtack'></i>";
+                        echo "<i class='bi bi-pin'></i>";
                     endif;
                 ?>
                 <a href="<?php echo esc_url( get_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a>

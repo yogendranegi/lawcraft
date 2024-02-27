@@ -11,7 +11,12 @@
  *
  * @package lawcraft
  */
-get_header(); ?>
+
+get_header(); 
+lawcraft_before_title();
+do_action('lawyer_get_page_title',true,false,false,false);
+lawcraft_after_title();
+?>
 
 <div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
     <div id="main" class="site-main" role="main">
@@ -47,14 +52,7 @@ get_header(); ?>
                                                 ?>                                                 
                                             </div>
                                             <div id="sidebar-wrapper" class="col-md-3">
-                                                <?php 
-                                                    if(true===get_theme_mod('lawcraft_enable_menu_left_sidebar',false)) :
-                                                    get_sidebar('sidebar-1') 
-                                                    
-                                                ?>
-                                                <?php
-                                                endif;
-                                                ?>
+                                                <?php get_sidebar('sidebar-1'); ?>
                                             </div>
                                         <?php
                                     }

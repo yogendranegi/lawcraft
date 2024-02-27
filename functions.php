@@ -14,17 +14,8 @@
 // Core Constants
 define('LAWCRAFT_REQUIRED_PHP_VERSION', '5.6' );
 define('LAWCRAFT_DIR_PATH', get_template_directory());
-define('LAWCRAFT_DIR_URI', get_template_directory_uri());
 define('LAWCRAFT_THEME_AUTH','https://spiraclethemes.com/');
-define('LAWCRAFT_THEME_URL','https://spiraclethemes.com/lawcraft-theme/');
-define('LAWCRAFT_THEME_PRO_URL','https://spiraclethemes.com/lawcraft-theme/');
-define('LAWCRAFT_THEME_DOC_URL','https://spiraclethemes.com/lawcraft-theme/');
-define('LAWCRAFT_THEME_VIDEOS_URL','https://spiraclethemes.com/lawcraft-theme/');
-define('LAWCRAFT_THEME_SUPPORT_URL','https://wordpress.org/support/theme/lawcraft/');
-define('LAWCRAFT_THEME_RATINGS_URL','https://wordpress.org/support/theme/lawcraft/reviews/');
-define('LAWCRAFT_THEME_CHANGELOGS_URL','https://themes.trac.wordpress.org/log/lawcraft/');
-define('LAWCRAFT_THEME_CONTACT_URL','#');
-
+define('LAWCRAFT_DIR_URI', get_template_directory_uri());
 
 // Register Custom Navigation Walker
 require_once(get_template_directory() .'/inc/wp_bootstrap_navwalker.php');
@@ -197,8 +188,8 @@ function lawcraft_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
     
 
@@ -259,11 +250,10 @@ script goes here
 */
 function lawcraft_scripts() {
 
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7');
+    wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3');
+    wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css', array(), '5.3.3');
     wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style( 'lawcraft-blocks-frontend', get_template_directory_uri() . '/css/blocks-frontend.css', array(), wp_get_theme()->get('Version'));
-
-    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 	wp_enqueue_style( 'm-customscrollbar', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.css', array(), '3.1.5');
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '3.7.2');
 
@@ -285,9 +275,9 @@ function lawcraft_scripts() {
 
 	wp_enqueue_script( 'respond', get_template_directory_uri().'/js/respond.js' );
     wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.3.7', true );
+    wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', array(), '5.3.3', true );
+
     wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
-    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 }
 add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
 
@@ -299,7 +289,7 @@ function lawcraft_search_form( $form ) {
     $form = '<form method="get" id="searchform" class="searchform" action="' . esc_url(home_url( '/' )) . '" >
     <div class="search">
       <input type="text" value="' . get_search_query() . '" class="blog-search" name="s" id="s" placeholder="'. esc_attr__( 'Search here','lawcraft' ) .'">
-      <label for="searchsubmit" class="search-icon"><i class="fas fa-search"></i></label>
+      <label for="searchsubmit" class="search-icon"><i class="bi bi-search"></i></label>
       <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search','lawcraft' ) .'" />
     </div>
     </form>';

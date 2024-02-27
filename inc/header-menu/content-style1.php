@@ -39,7 +39,7 @@
     <div id="header-main" class="header-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-xs-9 col-sm-9">
+                <div class="col-md-3">
                     <div class="logo">
                         
                         <?php 
@@ -101,29 +101,26 @@
                 
                     </div>
                 </div>
-                <div class="col-md-9 col-xs-3 col-sm-3">
-                    <div class="top-menu-wrapper">                       
-                        <nav class="top-menu" role="navigation" aria-label="<?php esc_attr_e('primary','lawcraft' ); ?>">
-                            <div class="menu-header">
-                                <span><?php esc_html_e('MENU','lawcraft');?> </span>
-                                    <button type="button" class="hd-bar-opener navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"      aria-expanded="false">
-                                        <span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lawcraft' ); ?></span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-                                    </button>
-				        	</div>
-                            <div class="navbar-collapse collapse clearfix" id="navbar-collapse-1">
-                                <?php 
+                <div class="col-md-9">
+                    <div class="top-menu-wrapper">
+                        <nav class="top-menu navbar navbar-expand-md" role="navigation" aria-label="<?php esc_attr_e('primary', 'lawcraft'); ?>">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_html_e('Toggle navigation', 'lawcraft'); ?>">
+                                <span class="sr-only"><?php esc_html_e('Toggle navigation', 'lawcraft'); ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                <?php
                                     wp_nav_menu(array(
-                                        'theme_location' =>'primary',
-                                        'depth'          =>3,
-                                        'container'      =>'ul',
-                                        'container_class'=>'navigation',
-                                        'container_id'   =>'menu-primary',
-                                        'menu_class'     =>'navigation',
+                                        'theme_location' => 'primary',
+                                        'depth' => 3,
+                                        'container' => 'ul',
+                                        'container_class' => 'navigation',
+                                        'container_id' => 'menu-primary',
+                                        'menu_class' => 'navigation',
                                     ));
-                                    ?>
+                                ?>
                             </div>
-                        </nav> 
+                        </nav>
                     </div>
                 </div>                
             </div>

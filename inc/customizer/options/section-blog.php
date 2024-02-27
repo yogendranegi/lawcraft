@@ -39,7 +39,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_category_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_category_show', 
 		array(
 		    'label'       => esc_html__( 'Posts Category', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -59,7 +59,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_cat', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_cat', 
 		array(
 		    'label'       => esc_html__( 'Show Category', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -77,7 +77,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_meta_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_meta_show', 
 		array(
 		    'label'       => esc_html__( 'Posts Meta', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -97,7 +97,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_date', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_date', 
 		array(
 		    'label'       => esc_html__( 'Show Date', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -117,7 +117,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_author', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_author', 
 		array(
 		    'label'       => esc_html__( 'Show Author', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -137,7 +137,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_comments', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_posts_meta_comments', 
 		array(
 		    'label'       => esc_html__( 'Show Comments', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -156,7 +156,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_meta_content_settings', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_post_meta_content_settings', 
 		array(
 		    'label'       => esc_html__( 'Posts Meta Text Settings', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -238,7 +238,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_sidebar_layout', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_sidebar_layout', 
 		array(
 		    'label'       => esc_html__( 'Sidebar', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -258,7 +258,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
         )
     );
     $wp_customize->add_control(
-        new lawcraft_Radio_Image_Control( $wp_customize,'lawcraft_blog_sidebar_layout',
+        new Lawcraft_Radio_Image_Control( $wp_customize,'lawcraft_blog_sidebar_layout',
             array(
                 'settings'		=> 'lawcraft_blog_sidebar_layout',
                 'section'		=> 'lawcraft_posts_settings',
@@ -282,7 +282,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_blog_excerpt', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_blog_excerpt', 
 		array(
 		    'label'       => esc_html__( 'Post Excerpt', 'lawcraft' ),
 		    'section'     => 'lawcraft_posts_settings',
@@ -354,7 +354,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_category_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_category_show', 
 		array(
 		    'label'       => esc_html__( 'Post Category', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -374,7 +374,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_cat', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_cat', 
 		array(
 		    'label'       => esc_html__( 'Show Category', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -413,7 +413,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_tag_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_tag_show', 
 		array(
 		    'label'       => esc_html__( 'Post Tags', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -433,7 +433,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_tags', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_tags', 
 		array(
 		    'label'       => esc_html__( 'Show Tags', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -451,7 +451,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_pos_meta_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_pos_meta_show', 
 		array(
 		    'label'       => esc_html__( 'Post Meta', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -471,7 +471,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_date', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_date', 
 		array(
 		    'label'       => esc_html__( 'Show Date', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -491,7 +491,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_author', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_author', 
 		array(
 		    'label'       => esc_html__( 'Show Author', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -511,7 +511,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_comments', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_meta_comments', 
 		array(
 		    'label'       => esc_html__( 'Show Comments', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -530,7 +530,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_content_settings', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_post_content_settings', 
 		array(
 		    'label'       => esc_html__( 'Text Settings', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -654,7 +654,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_sidebar_layout', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_single_sidebar_layout', 
 		array(
 		    'label'       => esc_html__( 'Sidebar', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -674,7 +674,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
         )
     );
     $wp_customize->add_control(
-        new lawcraft_Radio_Image_Control( $wp_customize,'lawcraft_blog_single_sidebar_layout',
+        new Lawcraft_Radio_Image_Control( $wp_customize,'lawcraft_blog_single_sidebar_layout',
             array(
                 'settings'		=> 'lawcraft_blog_single_sidebar_layout',
                 'section'		=> 'lawcraft_single_post_settings',
@@ -722,7 +722,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_full_width', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_single_post_full_width', 
 		array(
 		    'label'       => esc_html__( 'Show Full Width Post', 'lawcraft' ),
 		    'section'     => 'lawcraft_single_post_settings',
@@ -755,7 +755,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_category_archives_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_category_archives_show', 
 		array(
 		    'label'       => esc_html__( 'Category Archives', 'lawcraft' ),
 		    'section'     => 'lawcraft_archive_settings',
@@ -775,7 +775,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_cat_archive_settings', 
+		new Lawcraft_Toggle_Control( $wp_customize, 'lawcraft_enable_cat_archive_settings', 
 		array(
 		    'label'       => esc_html__( 'Show Category Title Options', 'lawcraft' ),
 		    'section'     => 'lawcraft_archive_settings',
@@ -793,7 +793,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_category_archives_title_show', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_category_archives_title_show', 
 		array(
 		    'label'       => esc_html__( 'Category Title Settings', 'lawcraft' ),
 		    'section'     => 'lawcraft_archive_settings',
@@ -832,7 +832,7 @@ function lawcraft_customizer_blog_register( $wp_customize ) {
     );
 
     $wp_customize->add_control( 
-        new lawcraft_Info_Control( $wp_customize, 'lawcraft_label_cat_archive_title_info_settings', 
+        new Lawcraft_Info_Control( $wp_customize, 'lawcraft_label_cat_archive_title_info_settings', 
         array(
             'label'       => esc_html__( "If you do not see any changes in preview after changing options then click on publish button and then refresh the page again. ", 'lawcraft' ),
             'section'     => 'lawcraft_archive_settings',

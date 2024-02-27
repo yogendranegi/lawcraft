@@ -3,7 +3,7 @@
 /**
  * Welcome Notice class.
  */
-class lawcraft_Welcome_Notice {
+class Lawcraft_Welcome_Notice {
 
 	/**
 	** Constructor.
@@ -269,10 +269,10 @@ class lawcraft_Welcome_Notice {
 		?>
 
 		<div class="welcome-message" style="<?php echo esc_attr($flex_attr); ?>">
-			<h1 style="<?php echo esc_attr($display_attr); ?>"><?php esc_html_e('Welcome to lawcraft WordPress theme', 'lawcraft'); ?></h1>
+			<h1 style="<?php echo esc_attr($display_attr); ?>"><?php esc_html_e('Welcome to LawCraft WordPress theme', 'lawcraft'); ?></h1>
 			<p>
 				
-				<?php esc_html_e( 'Easily Customize all aspects of your WordPress site with lawcraft WordPress Theme & Elementor Page Builder.', 'lawcraft' ); ?>
+				<?php esc_html_e( 'Easily Customize all aspects of your WordPress site with LawCraft WordPress Theme & Elementor Page Builder.', 'lawcraft' ); ?>
 			
 			</p>
 			
@@ -353,4 +353,4 @@ class lawcraft_Welcome_Notice {
 
 }
 
-new lawcraft_Welcome_Notice();
+new Lawcraft_Welcome_Notice();

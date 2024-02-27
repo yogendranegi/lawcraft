@@ -16,6 +16,27 @@ function lawcraft_before_title() {
 }
 endif;
 
+
+/**
+ * Before title content hook
+ */
+if ( ! function_exists( 'lawcraft_before_title_content' ) ) :
+	function lawcraft_before_title_content() {
+		do_action('lawcraft_before_title_content');
+	}
+endif;
+
+
+/**
+ * After title content hook
+ */
+if ( ! function_exists( 'lawcraft_after_title_content' ) ) :
+	function lawcraft_after_title_content() {
+		do_action('lawcraft_after_title_content');
+	}
+endif;
+
+
 /**
  * After title meta hook
  */
@@ -24,6 +45,7 @@ function lawcraft_after_title() {
 	do_action('lawcraft_after_title');
 }
 endif;
+
 
 /**
  * Single post content after meta hook

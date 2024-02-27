@@ -54,8 +54,8 @@ Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
 https://github.com/aFarkas/html5shiv
 
-Twitter Bootstrap Framework 3.3.7
-Copyright 2011-2016 Twitter, Inc.
+Bootstrap Framework 5.3.3
+Copyright 2011-2024 Bootstrap Authors.
 License: Licensed under the MIT license
 http://getbootstrap.com
 
@@ -72,12 +72,6 @@ Respond.js 1.3.0
 Copyright Scott Jehl
 License: MIT/GPLv2 Lic
 Source: https://github.com/scottjehl/Respond
-
-Font Awesome 5.10.1
-Copyright 2012 Dave Gandy
-Font License: SIL OFL 1.1
-Code License: MIT License
-http://fontawesome.com/license/free/
 
 Animate.css 3.7.2
 Copyright (c) 2019 Daniel Eden

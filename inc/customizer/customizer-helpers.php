@@ -1,6 +1,6 @@
 <?php
 /**
- * lawcraft Theme Customizer Helper Functions
+ * Lawcraft Theme Customizer Helper Functions
  *
  * @package lawcraft
  */

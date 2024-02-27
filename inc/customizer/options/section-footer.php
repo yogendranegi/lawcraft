@@ -27,7 +27,7 @@ function lawcraft_customizer_footer_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control( 
-		new lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_footer_settings_title', 
+		new Lawcraft_Title_Info_Control( $wp_customize, 'lawcraft_label_footer_settings_title', 
 		array(
 		    'label'       => esc_html__( 'Footer Settings', 'lawcraft' ),
 		    'section'     => 'lawcraft_footer_settings',

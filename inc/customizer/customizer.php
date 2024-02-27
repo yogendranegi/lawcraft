@@ -1,6 +1,6 @@
 <?php
 /**
- * lawcraft Theme Customizer
+ * Lawcraft Theme Customizer
  *
  * @package lawcraft
  */
@@ -22,7 +22,7 @@ function lawcraft_customize_register( $wp_customize ) {
     require get_parent_theme_file_path( 'inc/customizer/custom-controls/radio-images/class-radio-image-control.php' );
 
     // Register the custom control type.
-    $wp_customize->register_control_type( 'lawcraft_Toggle_Control' );
+    $wp_customize->register_control_type( 'Lawcraft_Toggle_Control' );
 
 
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -64,9 +64,6 @@ function lawcraft_customize_register( $wp_customize ) {
 }
 endif;
 add_action( 'customize_register', 'lawcraft_customize_register' );
-
-//menu sidebar settings
-get_template_part( 'inc/customizer/options/section-menusidebar' );
 
 //blog settings
 get_template_part( 'inc/customizer/options/section-blog' );

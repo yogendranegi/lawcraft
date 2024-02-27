@@ -1,6 +1,6 @@
 <?php
 /**
- * lawcraft Theme Customizer Data Sanitization
+ * Lawcraft Theme Customizer Data Sanitization
  *
  * @package lawcraft
  */

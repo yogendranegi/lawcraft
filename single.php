@@ -8,8 +8,9 @@
  */
 
 get_header();
-//lawcraft_before_title();
-//lawcraft_after_title();
+lawcraft_before_title();
+do_action('lawyer_get_page_title',true,false,false,false);
+lawcraft_after_title();
 
 $prevarticle = esc_html(get_theme_mod( 'lawcraft_single_post_previous_article_text', esc_html__('<< Previous Article','lawcraft')));
 $nextarticle = esc_html(get_theme_mod( 'lawcraft_single_post_next_article_text', esc_html__('Next Article >>','lawcraft')));

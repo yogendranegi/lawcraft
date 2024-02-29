@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if Lawcraft_Toggle_Control exists and WP_Customize_Control does not exsist.
-if ( class_exists('Lawcraft_Toggle_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
+// Exit if Lawfiz_Toggle_Control exists and WP_Customize_Control does not exsist.
+if ( class_exists('Lawfiz_Toggle_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
@@ -18,7 +18,7 @@ if ( class_exists('Lawcraft_Toggle_Control') && ! class_exists( 'WP_Customize_Co
  *
  * @access public
  */
-class Lawcraft_Toggle_Control extends WP_Customize_Control {
+class Lawfiz_Toggle_Control extends WP_Customize_Control {
 
 	/**
 	 * The type of customize control.
@@ -27,7 +27,7 @@ class Lawcraft_Toggle_Control extends WP_Customize_Control {
 	 * @since  1.3.4
 	 * @var    string
 	 */
-	public $type = 'lawcraft-toggle';
+	public $type = 'lawfiz-toggle';
 
 	/**
 	 * Enqueue scripts and styles.
@@ -37,8 +37,8 @@ class Lawcraft_Toggle_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'lawcraft-toggle-control-styles', get_parent_theme_file_uri( 'inc/customizer/custom-controls/toggle-button/toggle.css' ), false, '1.0.0', 'all' );
-		wp_enqueue_script( 'lawcraft-toggle-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/toggle-button/toggle.js' ), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'lawfiz-toggle-control-styles', get_parent_theme_file_uri( 'inc/customizer/custom-controls/toggle-button/toggle.css' ), false, '1.0.0', 'all' );
+		wp_enqueue_script( 'lawfiz-toggle-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/toggle-button/toggle.js' ), array( 'jquery' ), '1.0.0', true );
 	}
 
 	/**

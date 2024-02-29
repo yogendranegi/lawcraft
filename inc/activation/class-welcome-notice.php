@@ -3,7 +3,7 @@
 /**
  * Welcome Notice class.
  */
-class Lawcraft_Welcome_Notice {
+class Lawfiz_Welcome_Notice {
 
 	/**
 	** Constructor.
@@ -21,15 +21,15 @@ class Lawcraft_Welcome_Notice {
 
 		// Dismiss
 		add_action( 'admin_enqueue_scripts', [$this, 'notice_enqueue_scripts'], 5 );
-		add_action( 'wp_ajax_lawcraft_dismissed_handler', [$this, 'dismissed_handler'] );
+		add_action( 'wp_ajax_lawfiz_dismissed_handler', [$this, 'dismissed_handler'] );
 
 		// Reset
 		add_action( 'switch_theme', [$this, 'reset_notices'] );
 		add_action( 'after_switch_theme', [$this, 'reset_notices'] );
 
 		// Install Plugins
-		add_action( 'wp_ajax_lawcraft_install_activate_spiraclethemes_site_library', [$this, 'install_activate_spiraclethemes_site_library'] );
-		add_action( 'wp_ajax_nopriv_lawcraft_install_activate_spiraclethemes_site_library', [$this, 'install_activate_spiraclethemes_site_library'] );
+		add_action( 'wp_ajax_lawfiz_install_activate_spiraclethemes_site_library', [$this, 'install_activate_spiraclethemes_site_library'] );
+		add_action( 'wp_ajax_nopriv_lawfiz_install_activate_spiraclethemes_site_library', [$this, 'install_activate_spiraclethemes_site_library'] );
 
 	}
 
@@ -194,7 +194,7 @@ class Lawcraft_Welcome_Notice {
 		check_ajax_referer( 'nonce', 'nonce' );
 
 		if ( ! current_user_can( 'install_plugins' ) ) {
-			wp_send_json_error( esc_html__( 'Insufficient permissions to install the plugin.', 'lawcraft' ) );
+			wp_send_json_error( esc_html__( 'Insufficient permissions to install the plugin.', 'lawfiz' ) );
 			wp_die();
 		}
 
@@ -217,7 +217,7 @@ class Lawcraft_Welcome_Notice {
 			wp_send_json_success();
 		}
 
-		wp_send_json_error( esc_html__( 'Failed to initialize or activate importer plugin.', 'lawcraft' ) );
+		wp_send_json_error( esc_html__( 'Failed to initialize or activate importer plugin.', 'lawfiz' ) );
 
 		wp_die();
 	}
@@ -235,7 +235,7 @@ class Lawcraft_Welcome_Notice {
 
 			if ( ! get_transient( $transient_name ) ) {
 				?>
-				<div class="lawcraft-notice notice notice-success is-dismissible" data-notice="<?php echo esc_attr( $transient_name ); ?>">
+				<div class="lawfiz-notice notice notice-success is-dismissible" data-notice="<?php echo esc_attr( $transient_name ); ?>">
 					<button type="button" class="notice-dismiss"></button>
 
 					<?php $this->render_notice_content(); ?>
@@ -261,7 +261,7 @@ class Lawcraft_Welcome_Notice {
 		$flex_attr = '';
 		$display_attr = 'display: inline-block !important';
 
-		if ( 'appearance_page_about-lawcraft' === $screen->id ) {
+		if ( 'appearance_page_about-lawfiz' === $screen->id ) {
 			$flex_attr = 'display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center';
 			$display_attr = 'display: none !important';
 		}
@@ -269,16 +269,16 @@ class Lawcraft_Welcome_Notice {
 		?>
 
 		<div class="welcome-message" style="<?php echo esc_attr($flex_attr); ?>">
-			<h1 style="<?php echo esc_attr($display_attr); ?>"><?php esc_html_e('Welcome to LawCraft WordPress theme', 'lawcraft'); ?></h1>
+			<h1 style="<?php echo esc_attr($display_attr); ?>"><?php esc_html_e('Welcome to Lawfiz WordPress theme', 'lawfiz'); ?></h1>
 			<p>
 				
-				<?php esc_html_e( 'Easily Customize all aspects of your WordPress site with LawCraft WordPress Theme & Elementor Page Builder.', 'lawcraft' ); ?>
+				<?php esc_html_e( 'Easily Customize all aspects of your WordPress site with Lawfiz WordPress Theme & Elementor Page Builder.', 'lawfiz' ); ?>
 			
 			</p>
 			
 			<div class="action-buttons">
 				<a href="<?php echo esc_url(admin_url($redirect_url)); ?>" class="getstarted-button" data-action="<?php echo esc_attr($action); ?>">
-					<?php echo sprintf( esc_html__( 'Get Started with lawcraft %s', 'lawcraft' ), '<span class="dashicons dashicons-arrow-right-alt"></span>' ); ?>
+					<?php echo sprintf( esc_html__( 'Get Started with lawfiz %s', 'lawfiz' ), '<span class="dashicons dashicons-arrow-right-alt"></span>' ); ?>
 				</a>
 			</div>
 		</div>
@@ -319,12 +319,12 @@ class Lawcraft_Welcome_Notice {
 		?>
 		<script>
 			jQuery(function($) {
-				$( document ).on( 'click', '.lawcraft-notice .notice-dismiss', function () {
+				$( document ).on( 'click', '.lawfiz-notice .notice-dismiss', function () {
 					jQuery.post( 'ajax_url', {
-						action: 'lawcraft_dismissed_handler',
-						notice: $( this ).closest( '.lawcraft-notice' ).data( 'notice' ),
+						action: 'lawfiz_dismissed_handler',
+						notice: $( this ).closest( '.lawfiz-notice' ).data( 'notice' ),
 					});
-					$( '.lawcraft-notice' ).hide();
+					$( '.lawfiz-notice' ).hide();
 				} );
 			});
 		</script>
@@ -341,10 +341,10 @@ class Lawcraft_Welcome_Notice {
 		// Enqueue Scripts
 		wp_enqueue_script( 'welcome-notic-js', get_template_directory_uri() . '/inc/activation/js/welcome-notice.js', ['jquery'], false, true );
 
-		wp_localize_script( 'welcome-notic-js', 'lawcraft_localize', [
+		wp_localize_script( 'welcome-notic-js', 'lawfiz_localize', [
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'spiraclethemes_site_library_nonce' => wp_create_nonce( 'nonce' ),
-			'failed_message' => esc_html__( 'Something went wrong, contact support.', 'lawcraft' ),
+			'failed_message' => esc_html__( 'Something went wrong, contact support.', 'lawfiz' ),
 		] );
 
 		// Enqueue Styles.
@@ -353,4 +353,4 @@ class Lawcraft_Welcome_Notice {
 
 }
 
-new Lawcraft_Welcome_Notice();
+new Lawfiz_Welcome_Notice();

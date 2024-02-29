@@ -1,8 +1,8 @@
 <?php
 /**
- * Lawcraft Theme Customizer Helper Functions
+ * Lawfiz Theme Customizer Helper Functions
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 
@@ -11,7 +11,7 @@
 * 
 * @return void
 */
-function lawcraft_site_title_callback() {
+function lawfiz_site_title_callback() {
     bloginfo( 'name' );
 }
 
@@ -20,7 +20,7 @@ function lawcraft_site_title_callback() {
 * 
 * @return void
 */
-function lawcraft_site_description_callback() {
+function lawfiz_site_description_callback() {
     bloginfo( 'description' );
 }
 
@@ -28,8 +28,8 @@ function lawcraft_site_description_callback() {
 /**
  * Check if the single post no sidebar is enabled or not
  */
-function lawcraft_single_post_no_sidebar_enable( $control ) {
-	if ( $control->manager->get_setting( 'lawcraft_blog_single_sidebar_layout' )->value() == "no" ) {
+function lawfiz_single_post_no_sidebar_enable( $control ) {
+	if ( $control->manager->get_setting( 'lawfiz_blog_single_sidebar_layout' )->value() == "no" ) {
 		return true;
 	} else {
 		return false;
@@ -40,8 +40,8 @@ function lawcraft_single_post_no_sidebar_enable( $control ) {
 /**
  * Check if the single post no sidebar is enabled & full width disabled
  */
-function lawcraft_single_post_no_sidebar_enable_full_width_disable( $control ) {
-	if ( $control->manager->get_setting( 'lawcraft_blog_single_sidebar_layout' )->value() == "no" && $control->manager->get_setting( 'lawcraft_enable_single_post_full_width' )->value() == false  ) {
+function lawfiz_single_post_no_sidebar_enable_full_width_disable( $control ) {
+	if ( $control->manager->get_setting( 'lawfiz_blog_single_sidebar_layout' )->value() == "no" && $control->manager->get_setting( 'lawfiz_enable_single_post_full_width' )->value() == false  ) {
 		return true;
 	} else {
 		return false;
@@ -52,8 +52,8 @@ function lawcraft_single_post_no_sidebar_enable_full_width_disable( $control ) {
 /**
  * Check if the menu sidebar is enabled or not
  */
-function lawcraft_menu_sidebar_enable( $control ) {
-	if ( $control->manager->get_setting( 'lawcraft_enable_menu_left_sidebar' )->value() == true ) {
+function lawfiz_menu_sidebar_enable( $control ) {
+	if ( $control->manager->get_setting( 'lawfiz_enable_menu_left_sidebar' )->value() == true ) {
 		return true;
 	} else {
 		return false;
@@ -64,8 +64,8 @@ function lawcraft_menu_sidebar_enable( $control ) {
 /**
  * Check if the category archive settigns is enabled or not
  */
-function lawcraft_cat_archive_enable( $control ) {
-	if ( $control->manager->get_setting( 'lawcraft_enable_cat_archive_settings' )->value() == true ) {
+function lawfiz_cat_archive_enable( $control ) {
+	if ( $control->manager->get_setting( 'lawfiz_enable_cat_archive_settings' )->value() == true ) {
 		return true;
 	} else {
 		return false;

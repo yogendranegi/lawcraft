@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if Lawcraft_Title_Info_Control exists and WP_Customize_Control does not exsist.
-if ( class_exists('Lawcraft_Title_Info_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
+// Exit if Lawfiz_Title_Info_Control exists and WP_Customize_Control does not exsist.
+if ( class_exists('Lawfiz_Title_Info_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
@@ -18,7 +18,7 @@ if ( class_exists('Lawcraft_Title_Info_Control') && ! class_exists( 'WP_Customiz
  *
  * @access public
  */
-class Lawcraft_Title_Info_Control extends WP_Customize_Control {
+class Lawfiz_Title_Info_Control extends WP_Customize_Control {
 
 	/**
 	 * The type of customize control.
@@ -27,7 +27,7 @@ class Lawcraft_Title_Info_Control extends WP_Customize_Control {
 	 * @since  1.3.4
 	 * @var    string
 	 */
-	public $type = 'lawcraft-title';
+	public $type = 'lawfiz-title';
 
 
 	/**

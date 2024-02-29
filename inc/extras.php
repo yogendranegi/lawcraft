@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * @package lawcraft
+ * @package lawfiz
  */
 
 /**
@@ -11,8 +11,8 @@
  * @return array
  */
 
-if ( ! function_exists( 'lawcraft_body_classes' ) ) :
-function lawcraft_body_classes( $classes ) {
+if ( ! function_exists( 'lawfiz_body_classes' ) ) :
+function lawfiz_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,4 +26,4 @@ function lawcraft_body_classes( $classes ) {
 	return $classes;
 }
 endif;
-add_filter( 'body_class', 'lawcraft_body_classes' );
+add_filter( 'body_class', 'lawfiz_body_classes' );

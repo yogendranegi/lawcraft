@@ -1,13 +1,13 @@
 <?php
 /**
- * Lawcraft: Dynamic CSS Stylesheet
+ * Lawfiz: Dynamic CSS Stylesheet
  * 
  */
 
-function lawcraft_dynamic_css_stylesheet() {    
+function lawfiz_dynamic_css_stylesheet() {    
  
-    $link_color= sanitize_hex_color(get_theme_mod( 'lawcraft_link_color','#444444' ));
-    $link_hover_color= sanitize_hex_color(get_theme_mod( 'lawcraft_link_hover_color','#000000' ));
+    $link_color= sanitize_hex_color(get_theme_mod( 'lawfiz_link_color','#444444' ));
+    $link_hover_color= sanitize_hex_color(get_theme_mod( 'lawfiz_link_hover_color','#000000' ));
     
 
     $css = '        
@@ -36,7 +36,7 @@ function lawcraft_dynamic_css_stylesheet() {
     ';
 
     //if sticky header disabled
-    if(false===get_theme_mod( 'lawcraft_sticky_menu',true)) {
+    if(false===get_theme_mod( 'lawfiz_sticky_menu',true)) {
         $css .='        
              header.menu-wrapper.fixed { 
                 display:none !important;
@@ -44,5 +44,5 @@ function lawcraft_dynamic_css_stylesheet() {
         ';  
     }
 
-    return apply_filters( 'lawcraft_dynamic_css_stylesheet', lawcraft_minimize_css($css));
+    return apply_filters( 'lawfiz_dynamic_css_stylesheet', lawfiz_minimize_css($css));
 }

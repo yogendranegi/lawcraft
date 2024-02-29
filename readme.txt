@@ -1,4 +1,4 @@
-﻿=== LawCraft ===
+﻿=== LawFiz ===
 
 Contributors: spiraclethemes
 Tags: one-column, right-sidebar, left-sidebar, custom-header, featured-images, custom-menu, custom-logo, theme-options, threaded-comments, translation-ready, sticky-post, full-width-template, two-columns, three-columns
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 More Information here: 
-https://spiraclethemes.com/lawcraft-theme/
+https://spiraclethemes.com/lawfiz-theme/
 
 
 
@@ -24,18 +24,18 @@ https://spiraclethemes.com/lawcraft-theme/
 = Installation =
 	
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in LawCraft in the search form and press the 'Enter' key on your keyboard.
+2. Type in LawFiz in the search form and press the 'Enter' key on your keyboard.
 3. Click on 'Install' button to install and 'Activate' button to use.
 
 = Where can I find the documentation of this theme?
 
-1. Go to https://spiraclethemes.com/lawcraft-theme/
+1. Go to https://spiraclethemes.com/lawfiz-theme/
 
 
 
 == Copyrights =
-LawCraft WordPress Theme, Copyright 2024 Spiracle Themes
-LawCraft is distributed under the terms of the GNU General Public License v3
+LawFiz WordPress Theme, Copyright 2024 Spiracle Themes
+LawFiz is distributed under the terms of the GNU General Public License v3
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version.
 
@@ -44,7 +44,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 
 == Important Note ==
-LawCraft WordPress theme supports menu level of depth 3 only.
+LawFiz WordPress theme supports menu level of depth 3 only.
 
 
 == Resources: ==

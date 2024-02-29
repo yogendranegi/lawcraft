@@ -1,10 +1,10 @@
 <?php
 /**
- * lawcraft functions and definitions.
+ * lawfiz functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 /**
@@ -12,10 +12,10 @@
  */
 
 // Core Constants
-define('LAWCRAFT_REQUIRED_PHP_VERSION', '5.6' );
-define('LAWCRAFT_DIR_PATH', get_template_directory());
-define('LAWCRAFT_THEME_AUTH','https://spiraclethemes.com/');
-define('LAWCRAFT_DIR_URI', get_template_directory_uri());
+define('LAWFIZ_REQUIRED_PHP_VERSION', '5.6' );
+define('LAWFIZ_DIR_PATH', get_template_directory());
+define('LAWFIZ_THEME_AUTH','https://spiraclethemes.com/');
+define('LAWFIZ_DIR_URI', get_template_directory_uri());
 
 // Register Custom Navigation Walker
 require_once(get_template_directory() .'/inc/wp_bootstrap_navwalker.php');
@@ -28,16 +28,16 @@ require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
 * Check for minimum PHP version requirement 
 *
 */
-function lawcraft_check_theme_setup( $oldtheme_name, $oldtheme ){
+function lawfiz_check_theme_setup( $oldtheme_name, $oldtheme ){
     // Compare versions.
-    if ( version_compare(phpversion(), LAWCRAFT_REQUIRED_PHP_VERSION, '<') ) :
+    if ( version_compare(phpversion(), LAWFIZ_REQUIRED_PHP_VERSION, '<') ) :
     // Theme not activated info message.
-    add_action( 'admin_notices', 'lawcraft_php_admin_notice' );
-    function lawcraft_php_admin_notice() {
+    add_action( 'admin_notices', 'lawfiz_php_admin_notice' );
+    function lawfiz_php_admin_notice() {
         ?>
             <div class="update-nag">
-                <?php esc_html_e( 'You need to update your PHP version to a minimum of 5.6 to run LawCraft WordPress Theme.', 'lawcraft' ); ?> <br />
-                <?php esc_html_e( 'Actual version is:', 'lawcraft' ) ?> <strong><?php echo phpversion(); ?></strong>, <?php esc_html_e( 'required is', 'lawcraft' ) ?> <strong><?php echo LAWCRAFT_REQUIRED_PHP_VERSION; ?></strong>
+                <?php esc_html_e( 'You need to update your PHP version to a minimum of 5.6 to run LawFiz WordPress Theme.', 'lawfiz' ); ?> <br />
+                <?php esc_html_e( 'Actual version is:', 'lawfiz' ) ?> <strong><?php echo phpversion(); ?></strong>, <?php esc_html_e( 'required is', 'lawfiz' ) ?> <strong><?php echo LAWFIZ_REQUIRED_PHP_VERSION; ?></strong>
             </div>
         <?php
     }
@@ -46,10 +46,10 @@ function lawcraft_check_theme_setup( $oldtheme_name, $oldtheme ){
         return false;
     endif;
 }
-add_action( 'after_switch_theme', 'lawcraft_check_theme_setup', 10, 2  );
+add_action( 'after_switch_theme', 'lawfiz_check_theme_setup', 10, 2  );
 
 
-if ( ! function_exists( 'lawcraft_setup' ) ) :
+if ( ! function_exists( 'lawfiz_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -57,14 +57,14 @@ if ( ! function_exists( 'lawcraft_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function lawcraft_setup() {
+function lawfiz_setup() {
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on lawcraft, use a find and replace
-     * to change 'lawcraft' to the name of your theme in all the template files.
+     * If you're building a theme based on lawfiz, use a find and replace
+     * to change 'lawfiz' to the name of your theme in all the template files.
      */
-    load_theme_textdomain( 'lawcraft', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'lawfiz', get_template_directory() . '/languages' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -86,10 +86,10 @@ function lawcraft_setup() {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-        'primary' => esc_html__( 'Primary', 'lawcraft' ),
-        'footer' => esc_html__( 'Footer', 'lawcraft' ),
-		'social' => esc_html__( 'Sidebar Social', 'lawcraft' ),
-		'footer-social' => esc_html__( 'Footer Social', 'lawcraft' )
+        'primary' => esc_html__( 'Primary', 'lawfiz' ),
+        'footer' => esc_html__( 'Footer', 'lawfiz' ),
+		'social' => esc_html__( 'Sidebar Social', 'lawfiz' ),
+		'footer-social' => esc_html__( 'Footer Social', 'lawfiz' )
     ) );
 
     /*
@@ -113,7 +113,7 @@ function lawcraft_setup() {
     remove_theme_support( 'widgets-block-editor' );
 
     /**
-     * lawcraft theme info
+     * lawfiz theme info
      */
     require get_template_directory() . '/inc/theme-info.php';
 
@@ -121,22 +121,22 @@ function lawcraft_setup() {
     * About page instance
     */
     $config = array();
-    Lawcraft_About_Page::lawcraft_init( $config );
+    Lawfiz_About_Page::lawfiz_init( $config );
 
     if ( is_customize_preview() ) {
         //require get_template_directory() . '/inc/starter-content.php';
-        //add_theme_support( 'starter-content', lawcraft_get_starter_content() );
+        //add_theme_support( 'starter-content', lawfiz_get_starter_content() );
     }
 
 }
 endif;
-add_action( 'after_setup_theme', 'lawcraft_setup' );
+add_action( 'after_setup_theme', 'lawfiz_setup' );
 
 
 /**
 * Custom logo
 */
-function lawcraft_logo_setup(){
+function lawfiz_logo_setup(){
     add_theme_support('custom-logo', array(
         'height' => 65,
         'width' => 350,
@@ -144,7 +144,7 @@ function lawcraft_logo_setup(){
         'flex-width' => true,
     ));
 }
-add_action('after_setup_theme', 'lawcraft_logo_setup');
+add_action('after_setup_theme', 'lawfiz_logo_setup');
 
 
 /**
@@ -154,10 +154,10 @@ add_action('after_setup_theme', 'lawcraft_logo_setup');
  *
  * @global int $content_width
  */
-function lawcraft_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'lawcraft_content_width', 640 );
+function lawfiz_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'lawfiz_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'lawcraft_content_width', 0 );
+add_action( 'after_setup_theme', 'lawfiz_content_width', 0 );
 
 
 
@@ -166,12 +166,12 @@ add_action( 'after_setup_theme', 'lawcraft_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function lawcraft_widgets_init() {
+function lawfiz_widgets_init() {
 	//Footer widget columns
-    $widget_num = absint(get_theme_mod( 'lawcraft_footer_widgets', '4' ));
+    $widget_num = absint(get_theme_mod( 'lawfiz_footer_widgets', '4' ));
     for ( $i=1; $i <= $widget_num; $i++ ) :
         register_sidebar( array(
-            'name'          => esc_html__( 'Footer Column', 'lawcraft' ) . $i,
+            'name'          => esc_html__( 'Footer Column', 'lawfiz' ) . $i,
             'id'            => 'footer-' . $i,
             'description'   => '',
             'before_widget' => '<div id="%1$s" class="section %2$s">',
@@ -183,9 +183,9 @@ function lawcraft_widgets_init() {
 
 
     register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'lawcraft' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'lawfiz' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'lawcraft' ),
+		'description'   => esc_html__( 'Add widgets here.', 'lawfiz' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -194,66 +194,66 @@ function lawcraft_widgets_init() {
     
 
 }
-add_action( 'widgets_init', 'lawcraft_widgets_init' );
+add_action( 'widgets_init', 'lawfiz_widgets_init' );
 
 /**
 * Admin Scripts
 */
-if ( ! function_exists( 'lawcraft_admin_scripts' ) ) :
-    function lawcraft_admin_scripts($hook) {
-          wp_enqueue_style( 'lawcraft-info-css', get_template_directory_uri() . '/css/lawcraft-theme-info.css', false ); 
+if ( ! function_exists( 'lawfiz_admin_scripts' ) ) :
+    function lawfiz_admin_scripts($hook) {
+          wp_enqueue_style( 'lawfiz-info-css', get_template_directory_uri() . '/css/lawfiz-theme-info.css', false ); 
     }
     endif;
-    add_action( 'admin_enqueue_scripts', 'lawcraft_admin_scripts' );
+    add_action( 'admin_enqueue_scripts', 'lawfiz_admin_scripts' );
 
 /** 
 * Excerpt More
 */
-function lawcraft_excerpt_more( $more ) {
+function lawfiz_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
     return '&hellip;';
 }
-add_filter('excerpt_more', 'lawcraft_excerpt_more');
+add_filter('excerpt_more', 'lawfiz_excerpt_more');
 
 
 /** 
 * Custom excerpt length.
 */
-function lawcraft_excerpt_length($length) {
+function lawfiz_excerpt_length($length) {
 	if ( is_admin() ) {
 		return $length;
 	}
 	return 30;
 }
-add_filter('excerpt_length', 'lawcraft_excerpt_length');
+add_filter('excerpt_length', 'lawfiz_excerpt_length');
 
 
 /**
  * Display Dynamic CSS.
  */
-function lawcraft_dynamic_css_wrap() {
+function lawfiz_dynamic_css_wrap() {
 	require_once( get_parent_theme_file_path( '/css/dynamic.css.php' ) );  
 	?>
-  		<style type="text/css" id="lawcraft-dynamic-style">
-    		<?php echo lawcraft_dynamic_css_stylesheet(); ?>
+  		<style type="text/css" id="lawfiz-dynamic-style">
+    		<?php echo lawfiz_dynamic_css_stylesheet(); ?>
   		</style>
 	<?php 
 }
-add_action( 'wp_head', 'lawcraft_dynamic_css_wrap' );
+add_action( 'wp_head', 'lawfiz_dynamic_css_wrap' );
 
 
 
 /*
 script goes here
 */
-function lawcraft_scripts() {
+function lawfiz_scripts() {
 
     wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3');
     wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css', array(), '5.3.3');
-    wp_enqueue_style( 'lawcraft-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
-    wp_enqueue_style( 'lawcraft-blocks-frontend', get_template_directory_uri() . '/css/blocks-frontend.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style( 'lawfiz-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style( 'lawfiz-blocks-frontend', get_template_directory_uri() . '/css/blocks-frontend.css', array(), wp_get_theme()->get('Version'));
 	wp_enqueue_style( 'm-customscrollbar', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.css', array(), '3.1.5');
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '3.7.2');
 
@@ -279,35 +279,35 @@ function lawcraft_scripts() {
 
     wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'lawcraft_scripts' );
+add_action( 'wp_enqueue_scripts', 'lawfiz_scripts' );
 
 
 /**
 * Custom search form
 */
-function lawcraft_search_form( $form ) {
+function lawfiz_search_form( $form ) {
     $form = '<form method="get" id="searchform" class="searchform" action="' . esc_url(home_url( '/' )) . '" >
     <div class="search">
-      <input type="text" value="' . get_search_query() . '" class="blog-search" name="s" id="s" placeholder="'. esc_attr__( 'Search here','lawcraft' ) .'">
+      <input type="text" value="' . get_search_query() . '" class="blog-search" name="s" id="s" placeholder="'. esc_attr__( 'Search here','lawfiz' ) .'">
       <label for="searchsubmit" class="search-icon"><i class="bi bi-search"></i></label>
-      <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search','lawcraft' ) .'" />
+      <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search','lawfiz' ) .'" />
     </div>
     </form>';
     return $form;
 }
-add_filter( 'get_search_form', 'lawcraft_search_form', 100 );
+add_filter( 'get_search_form', 'lawfiz_search_form', 100 );
 
 
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function lawcraft_pingback_header() {
+function lawfiz_pingback_header() {
     if ( is_singular() && pings_open() ) {
        printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
      }
 }
-add_action( 'wp_head', 'lawcraft_pingback_header' );
+add_action( 'wp_head', 'lawfiz_pingback_header' );
 
 
 /**
@@ -344,4 +344,4 @@ require_once get_parent_theme_file_path( '/inc/activation/class-rating-notice.ph
 /**
  * Upgrade Pro
  */
-require_once( trailingslashit( get_template_directory() ) . 'lawcraft-pro/class-customize.php' );
+require_once( trailingslashit( get_template_directory() ) . 'lawfiz-pro/class-customize.php' );

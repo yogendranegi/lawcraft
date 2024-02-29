@@ -9,19 +9,19 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 get_header();
-lawcraft_before_title();
-if(true===get_theme_mod( 'lawcraft_enable_page_title',true)) :
-	do_action('lawcraft_get_page_title',false,false,false,false);
+lawfiz_before_title();
+if(true===get_theme_mod( 'lawfiz_enable_page_title',true)) :
+	do_action('lawfiz_get_page_title',false,false,false,false);
 endif;
-lawcraft_after_title();
+lawfiz_after_title();
 
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawfiz_header_menu_style','style1')); ?> content-area">
     <main id="main" class="site-main" role="main">
         <div class="content-inner">
             <div class="row">

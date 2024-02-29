@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 ?>
@@ -15,11 +15,11 @@
 
 <header id="<?php echo esc_attr($page_val);?>-inner" class="elementer-menu-anchor theme-menu-wrapper full-width-menu style1 page" role="banner">
     <?php
-        if(true===get_theme_mod('lawcraft_enable_highlighted area',true) && is_front_page()){
-            ?><a class="skip-link screen-reader-text" herf="#content"><?php esc_html_e('skip to content','lawcraft'); ?> </a> <?php
+        if(true===get_theme_mod('lawfiz_enable_highlighted area',true) && is_front_page()){
+            ?><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('skip to content','lawfiz'); ?> </a> <?php
         }
         else{
-        ?><a class="skip-link screen-reader-text" herf="#main"><?php esc_html_e('skip to content','lawcraft');?></a> <?php
+        ?><a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('skip to content','lawfiz');?></a> <?php
     }
     ?>
 
@@ -29,8 +29,8 @@
             <div class="menutext">
                 <div class="col-md-12">
                     <div class="topbar-items">
-                        <span class="phone"><?php esc_html_e('call us:8889-123-4567','lawcraft');?> </span> 
-                        <span class="email"><?php esc_html_e('Email us at:info@example.com','lawcraft');?> </span>
+                        <span class="phone"><?php esc_html_e('call us:8889-123-4567','lawfiz');?> </span> 
+                        <span class="email"><?php esc_html_e('Email us at:info@example.com','lawfiz');?> </span>
                     </div>
                 </div>
             </div>          
@@ -40,72 +40,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="logo">
-                        
+                    <div class="logo" itemscope itemtype="https://schema.org/Organization">
                         <?php 
-                            if(has_custom_logo()){
-                                lawcraft_custom_logo();
-                            }
+                            if (has_custom_logo()) :
+                                lawfiz_custom_logo();
+                            endif;               		                	
                         ?>
-                
-                        <?php
-                            $alt_logo=esc_url(get_theme_mod('lawcraft_sticky_logo'));
-                                if(!empty($alt_logo)){
+                        <?php 
+                            if ( get_theme_mod( 'lawfiz_enable_logo_stickyheader', false )) :
+                                $alt_logo=esc_url(get_theme_mod( 'lawfiz_logo_stickyheader' ));
+                                if(!empty($alt_logo)) :
                                     ?>
-                                        <a id="logo-alt" class="logo-alt" href="<?php echo esc_url(home_url('/'));?>"> <img src="<?php echo esc_url(get_theme_mod('lawcraft_sticky_logo'));?>" alt="logo"></a>
+                                        <a id="logo-alt" class="logo-alt" href="<?php echo esc_url(home_url( '/' )); ?>"><img src="<?php echo esc_url( get_theme_mod( 'lawfiz_logo_stickyheader' ) ); ?>" alt="<?php esc_attr_e( 'logo', 'lawfiz' ); ?>"></a>
                                     <?php
-                                }
+                                endif;
+                            endif;
                         ?>
                         <?php
-                            $show_title =(true===get_theme_mod('lawcraft_display_site_title_tagline',true));
-                            $header_class=$show_title ?
-                            'site-title' :
-                            'screen-reader-text';
-                                if(!empty(get_bloginfo('name'))) {
-                                    if( is_front_page() || is_home()) {
+                            $show_title   = ( true === get_theme_mod( 'lawfiz_display_site_title_tagline', true ) );
+                            $header_class = $show_title ? 'site-title' : 'screen-reader-text';
+                            if(!empty(get_bloginfo( 'name' ))) {
+                                if ( is_front_page() ) {
                                     ?>
-                                    <h1 class="<?php echo esc_attr($header_class);?>">
-                                        <a href="<?php echo esc_url(home_url('/')); ?>"
-                                        rel="home"><?php esc_html(bloginfo( 'name' ));?></a>
+                                        <h1 class="<?php echo esc_attr( $header_class ); ?>">
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a>
                                         </h1>
+
                                     <?php
 
-                                    if(true===get_theme_mod(
-                                        'lawcraft_display_site_title_tagline',true)) {
-                                            $description = esc_html(get_bloginfo('description','display'));
-                                                if($description || is_customize_preview()) {
-                                                    ?>
-                                                        <p class="site-description"><?php echo $description;?></p>
-                                                    <?php
-                                                }
-                                        }
-                                    }
-                                    else {
-                                        ?>
-                                            <p class="<?php echo esc_attr($header_class);?>">
-                                                <a herf="<?php echo esc_url(home_url('/'));?>" rel="home"><?php esc_html(bloginfo('name'));?></a>
-                                            </p>
-                                        <?php
-
-                                        if(true=== get_theme_mod('lawcraft_display_site_title_tagline',true)) {
-                                            $description= esc_html(get_bloginfo('descriptiopn','display'));
-                                            if ($description || is_customize_preview()){
-                                                ?>
-                                                    <p class="site-description"><?php echo $description;?></p>
-                                                <?php
-                                            }
+                                    if(true === get_theme_mod( 'lawfiz_display_site_title_tagline', true )) {
+                                        $description = esc_html(get_bloginfo( 'description', 'display' ));
+                                        if ( $description || is_customize_preview() ) { 
+                                            ?>
+                                                <p class="site-description"><?php echo $description; ?></p>
+                                            <?php 
                                         }
                                     }
                                 }
-                        ?>
-                
+                                else {
+                                    ?>
+                                        <p class="<?php echo esc_attr( $header_class ); ?>">
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a>
+                                        </p>
+                                    <?php
+
+                                    if(true === get_theme_mod( 'lawfiz_display_site_title_tagline', true )) {
+                                        $description = esc_html(get_bloginfo( 'description', 'display' ));
+                                        if ( $description || is_customize_preview() ) { 
+                                            ?>
+                                                <p class="site-description"><?php echo $description; ?></p>
+                                            <?php 
+                                        }
+                                    }
+                                }
+                            }
+                        ?>	
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="top-menu-wrapper">
-                        <nav class="top-menu navbar navbar-expand-md" role="navigation" aria-label="<?php esc_attr_e('primary', 'lawcraft'); ?>">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_html_e('Toggle navigation', 'lawcraft'); ?>">
-                                <span class="sr-only"><?php esc_html_e('Toggle navigation', 'lawcraft'); ?></span>
+                        <nav class="top-menu navbar navbar-expand-md" role="navigation" aria-label="<?php esc_attr_e('primary', 'lawfiz'); ?>">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'lawfiz'); ?>">
+                                <span class="sr-only"><?php esc_html_e('Toggle navigation', 'lawfiz'); ?></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
                             </button>
                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -139,11 +135,11 @@
             <div class="side-menu">
                 <?php
                     /**
-		              * Hook - lawcraft_action_search_content
+		              * Hook - lawfiz_action_search_content
 		              *
-		            * @hooked lawcraft_search_content - 10
+		            * @hooked lawfiz_search_content - 10
 		            */
-                    do_action('lawcraft_action_search_content');
+                    do_action('lawfiz_action_search_content');
                 ?>
                 <nav role="navigation">
                     <div class="side-navigation clearfix" id="navbar-collapse-2">
@@ -168,13 +164,13 @@
 <div id="content" class="elementor-menu-anchor"></div>
 
 <?php
-    if(true===get_theme_mod('lawcraft_enable_highlight_area',true)){
+    if(true===get_theme_mod('lawfiz_enable_highlight_area',true)){
          /**
-	    * Hook - lawcraft_action_highlight_area
+	    * Hook - lawfiz_action_highlight_area
 	    *
-	    * @hooked lawcraft_highlight_area - 10
+	    * @hooked lawfiz_highlight_area - 10
 	    */
-        do_action('lawcraft_action_highlighted_area');
+        do_action('lawfiz_action_highlighted_area');
     }
 ?>
 <div class="content-wrap">

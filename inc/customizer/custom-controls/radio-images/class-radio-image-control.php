@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if Lawcraft_Radio_Image_Control exists and WP_Customize_Control does not exsist.
-if ( class_exists('Lawcraft_Radio_Image_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
+// Exit if Lawfiz_Radio_Image_Control exists and WP_Customize_Control does not exsist.
+if ( class_exists('Lawfiz_Radio_Image_Control') && ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
@@ -18,7 +18,7 @@ if ( class_exists('Lawcraft_Radio_Image_Control') && ! class_exists( 'WP_Customi
  *
  * @access public
  */
-class Lawcraft_Radio_Image_Control extends WP_Customize_Control {
+class Lawfiz_Radio_Image_Control extends WP_Customize_Control {
 	
 	/**
 	 * Declare the control type.
@@ -26,7 +26,7 @@ class Lawcraft_Radio_Image_Control extends WP_Customize_Control {
 	 * @access public
 	 * @var string
 	 */
-	public $type = 'lawcraft-radio-image';
+	public $type = 'lawfiz-radio-image';
 	
 	/**
 	 * Enqueue scripts and styles.
@@ -36,7 +36,7 @@ class Lawcraft_Radio_Image_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
         wp_enqueue_script( 'jquery-ui-button' );
-        wp_enqueue_style( 'lawcraft-radio-image-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/radio-images/radio-image.css', array(), '1.0', 'all' ));
+        wp_enqueue_style( 'lawfiz-radio-image-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/radio-images/radio-image.css', array(), '1.0', 'all' ));
 	}
 	
 	/**

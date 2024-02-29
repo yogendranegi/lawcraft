@@ -1,4 +1,4 @@
-.lawcraft-notice {
+.lawfiz-notice {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,66 +10,66 @@
     padding: 30px !important;
 }
 
-.lawcraft-notice .welcome-message {
+.lawfiz-notice .welcome-message {
     max-width: 650px;
     display: inline-block;
 }
 
-.lawcraft-notice .welcome-message h1 {
+.lawfiz-notice .welcome-message h1 {
     font-size: 36px;
     font-weight: 600;
 }
 
-.lawcraft-notice .welcome-message p {
+.lawfiz-notice .welcome-message p {
     font-size: 14px;
 }
 
-.lawcraft-notice .welcome-message .action-buttons {
+.lawfiz-notice .welcome-message .action-buttons {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.lawcraft-notice .welcome-message .action-buttons a {
+.lawfiz-notice .welcome-message .action-buttons a {
     padding: 20px 20px;
     border: none;
     text-decoration: none;
     transition: 0.2s;
 }
 
-.lawcraft-notice .welcome-message .action-buttons a:hover {
+.lawfiz-notice .welcome-message .action-buttons a:hover {
     background-color: #3a3a3a;
     color: #fff;
     transition: 0.2s;
 }
 
-.lawcraft-notice .welcome-message .action-buttons a:focus,
-.lawcraft-notice .welcome-message .action-buttons a:active,
-.lawcraft-notice .welcome-message .action-buttons a:hover {
+.lawfiz-notice .welcome-message .action-buttons a:focus,
+.lawfiz-notice .welcome-message .action-buttons a:active,
+.lawfiz-notice .welcome-message .action-buttons a:hover {
     color: #fff;
 }
 
-.lawcraft-notice .welcome-message .action-buttons a .dashicons {
+.lawfiz-notice .welcome-message .action-buttons a .dashicons {
     font-size: 12px;
     line-height: 20px;
 }
 
-.lawcraft-notice .image-wrap {
+.lawfiz-notice .image-wrap {
     text-align: right;
     display: inline-block;
     width: 480px;
 }
 
-.lawcraft-notice .image-wrap img {
+.lawfiz-notice .image-wrap img {
     display: inline-block;
     width: 350px;
 }
 
 @media screen and (max-width: 1366px) {
-    .lawcraft-notice .image-wrap img {
+    .lawfiz-notice .image-wrap img {
         max-width: 90%;
     }
 
-    .lawcraft-notice .welcome-message p {
+    .lawfiz-notice .welcome-message p {
         font-size: 13px;
     }
 }

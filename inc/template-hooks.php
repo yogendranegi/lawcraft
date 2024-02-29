@@ -3,16 +3,16 @@
  * Custom template hooks for this theme.
  *
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 
 /**
  * Before title meta hook
  */
-if ( ! function_exists( 'lawcraft_before_title' ) ) :
-function lawcraft_before_title() {
-	do_action('lawcraft_before_title');
+if ( ! function_exists( 'lawfiz_before_title' ) ) :
+function lawfiz_before_title() {
+	do_action('lawfiz_before_title');
 }
 endif;
 
@@ -20,9 +20,9 @@ endif;
 /**
  * Before title content hook
  */
-if ( ! function_exists( 'lawcraft_before_title_content' ) ) :
-	function lawcraft_before_title_content() {
-		do_action('lawcraft_before_title_content');
+if ( ! function_exists( 'lawfiz_before_title_content' ) ) :
+	function lawfiz_before_title_content() {
+		do_action('lawfiz_before_title_content');
 	}
 endif;
 
@@ -30,9 +30,9 @@ endif;
 /**
  * After title content hook
  */
-if ( ! function_exists( 'lawcraft_after_title_content' ) ) :
-	function lawcraft_after_title_content() {
-		do_action('lawcraft_after_title_content');
+if ( ! function_exists( 'lawfiz_after_title_content' ) ) :
+	function lawfiz_after_title_content() {
+		do_action('lawfiz_after_title_content');
 	}
 endif;
 
@@ -40,9 +40,9 @@ endif;
 /**
  * After title meta hook
  */
-if ( ! function_exists( 'lawcraft_after_title' ) ) :
-function lawcraft_after_title() {
-	do_action('lawcraft_after_title');
+if ( ! function_exists( 'lawfiz_after_title' ) ) :
+function lawfiz_after_title() {
+	do_action('lawfiz_after_title');
 }
 endif;
 
@@ -50,8 +50,8 @@ endif;
 /**
  * Single post content after meta hook
  */
-if ( ! function_exists( 'lawcraft_single_post_after_content' ) ) :
-function lawcraft_single_post_after_content($postID) {
-	do_action('lawcraft_single_post_after_content',$postID);
+if ( ! function_exists( 'lawfiz_single_post_after_content' ) ) :
+function lawfiz_single_post_after_content($postID) {
+	do_action('lawfiz_single_post_after_content',$postID);
 }
 endif;

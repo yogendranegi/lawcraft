@@ -9,22 +9,22 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 get_header(); 
-lawcraft_before_title();
-do_action('lawyer_get_page_title',true,false,false,false);
-lawcraft_after_title();
+lawfiz_before_title();
+do_action('lawfiz_get_page_title',true,false,false,false);
+lawfiz_after_title();
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawfiz_header_menu_style','style1')); ?> content-area">
     <div id="main" class="site-main" role="main">
         <div class="container-inner">
             <div id="blog-section">
                 <div class="row">
                     <?php
-                        if('right'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))){
+                        if('right'===esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))){
                             ?>
                                 <?php
                                     if( is_active_sidebar('sidebar-1')){
@@ -83,7 +83,7 @@ lawcraft_after_title();
                                 ?>
                             <?php
                         }
-                        else if('left'=== esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
+                        else if('left'=== esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))) {
                             ?>
                                 <?php
                                     if(is_active_sidebar('sidebar-1')){

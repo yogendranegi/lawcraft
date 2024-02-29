@@ -7,7 +7,7 @@
  * 
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package lawcraft
+ * @package lawfiz
  */
 ?>
 
@@ -31,7 +31,7 @@
     ?>
 
     <?php
-        if(true===get_theme_mod('lawcraft_enable_preloader',true)) {
+        if(true===get_theme_mod('lawfiz_enable_preloader',true)) {
             ?>
                 <!-- start preloader -->
                 <div class="loader-wrapper lds-flickr">
@@ -46,5 +46,5 @@
 
     <!-- header styles -->
     <?php
-        do_action('lawcraft_action_header');
+        do_action('lawfiz_action_header');
     ?>

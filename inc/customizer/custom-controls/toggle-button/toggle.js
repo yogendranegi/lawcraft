@@ -1,6 +1,6 @@
 ( function( $, api ) {
 
-	api.controlConstructor['lawcraft-toggle'] = api.Control.extend( {
+	api.controlConstructor['lawfiz-toggle'] = api.Control.extend( {
 
 		ready: function() {
 			var control = this;

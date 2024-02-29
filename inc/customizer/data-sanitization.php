@@ -1,8 +1,8 @@
 <?php
 /**
- * Lawcraft Theme Customizer Data Sanitization
+ * Lawfiz Theme Customizer Data Sanitization
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 
@@ -12,8 +12,8 @@
  * @param bool $checked Whether the checkbox is checked.
  * @return bool Whether the checkbox is checked.
  */
-if ( ! function_exists( 'lawcraft_sanitize_checkbox' ) ) :
-function lawcraft_sanitize_checkbox( $checked ) {
+if ( ! function_exists( 'lawfiz_sanitize_checkbox' ) ) :
+function lawfiz_sanitize_checkbox( $checked ) {
     // Boolean check.
     return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
@@ -28,8 +28,8 @@ endif;
  * @param string $url URL to sanitize.
  * @return string Sanitized URL.
  */
-if ( ! function_exists( 'lawcraft_sanitize_url' ) ) :
-function lawcraft_sanitize_url( $url ) {
+if ( ! function_exists( 'lawfiz_sanitize_url' ) ) :
+function lawfiz_sanitize_url( $url ) {
     return esc_url_raw( $url );
 }
 endif;
@@ -43,8 +43,8 @@ endif;
  * @param string $str to sanitize.
  * @return string Sanitized string.
  */
-if ( ! function_exists( 'lawcraft_sanitize_text_field' ) ) :
-function lawcraft_sanitize_text_field( $str ) {
+if ( ! function_exists( 'lawfiz_sanitize_text_field' ) ) :
+function lawfiz_sanitize_text_field( $str ) {
     return sanitize_text_field( $str );
 }
 endif;
@@ -58,8 +58,8 @@ endif;
  * @param mixed $str to sanitize.
  * @return int, A non-negative integer.
  */
-if ( ! function_exists( 'lawcraft_sanitize_number' ) ) :
-function lawcraft_sanitize_number( $str ) {
+if ( ! function_exists( 'lawfiz_sanitize_number' ) ) :
+function lawfiz_sanitize_number( $str ) {
     return absint( $str );
 }
 endif;
@@ -73,8 +73,8 @@ endif;
  * @param string $str to sanitize.
  * @return string Sanitized string.
  */
-if ( ! function_exists( 'lawcraft_sanitize_textarea_field' ) ) :
-function lawcraft_sanitize_textarea_field( $str ) {
+if ( ! function_exists( 'lawfiz_sanitize_textarea_field' ) ) :
+function lawfiz_sanitize_textarea_field( $str ) {
     return sanitize_textarea_field( $str );
 }
 endif;
@@ -83,8 +83,8 @@ endif;
 /**
  * Select sanitization.
  */
-if ( ! function_exists( 'lawcraft_sanitize_select' ) ) :
-function lawcraft_sanitize_select( $input, $setting ) {
+if ( ! function_exists( 'lawfiz_sanitize_select' ) ) :
+function lawfiz_sanitize_select( $input, $setting ) {
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
 	// Get list of choices from the control associated with the setting.
@@ -97,8 +97,8 @@ endif;
 /**
  * Title sanitization.
  */
-if ( ! function_exists( 'lawcraft_sanitize_title' ) ) :
-function lawcraft_sanitize_title( $str ) {
+if ( ! function_exists( 'lawfiz_sanitize_title' ) ) :
+function lawfiz_sanitize_title( $str ) {
 	return sanitize_title( $str );	
 }
 endif;

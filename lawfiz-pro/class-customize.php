@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Lawcraft_Pro_Customize {
+final class Lawfiz_Pro_Customize {
 
 	/**
 	 * Returns the instance.
@@ -62,21 +62,21 @@ final class Lawcraft_Pro_Customize {
 	public function sections( $manager ) {
 
 		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'lawcraft-pro/section-pro.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'lawfiz-pro/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'Lawcraft_Pro_Customize_Section_Pro' );
+		$manager->register_section_type( 'Lawfiz_Pro_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new Lawcraft_Pro_Customize_Section_Pro(
+			new Lawfiz_Pro_Customize_Section_Pro(
 				$manager,
-				'lawcraft_buy',
+				'lawfiz_buy',
 				array(
 					'priority'      => 10,
-					'title'    => esc_html__( 'LawCraft Pro', 'lawcraft' ),
-					'pro_text' => esc_html__( 'Upgrade to Pro', 'lawcraft' ),
-					'pro_url'  => 'https://www.spiraclethemes.com/lawcraft-theme/'
+					'title'    => esc_html__( 'Lawfiz Pro', 'lawfiz' ),
+					'pro_text' => esc_html__( 'Upgrade to Pro', 'lawfiz' ),
+					'pro_url'  => 'https://www.spiraclethemes.com/lawfiz-theme/'
 				)
 			)
 		);
@@ -91,11 +91,11 @@ final class Lawcraft_Pro_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'lawcraft-customize-controls', trailingslashit( get_template_directory_uri() ) . 'lawcraft-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'lawfiz-customize-controls', trailingslashit( get_template_directory_uri() ) . 'lawfiz-pro/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'lawcraft-customize-controls', trailingslashit( get_template_directory_uri() ) . 'lawcraft-pro/customize-controls.css' );
+		wp_enqueue_style( 'lawfiz-customize-controls', trailingslashit( get_template_directory_uri() ) . 'lawfiz-pro/customize-controls.css' );
 	}
 }
 
 // Doing this customizer thang!
-Lawcraft_Pro_Customize::get_instance();
+Lawfiz_Pro_Customize::get_instance();

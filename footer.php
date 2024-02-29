@@ -6,13 +6,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 ?>
 	</div>
 	<!-- Begin Footer Section -->
-	<footer id="footer" class="lawcraft-footer" itemscope itemtype="https://schema.org/WPFooter">
+	<footer id="footer" class="lawfiz-footer" itemscope itemtype="https://schema.org/WPFooter">
 		<div class="container footer-widgets">
 			<div class="row">
 				<div class="footer-widgets-wrapper">
@@ -26,11 +26,11 @@
 					<div class="footer-copyrights-wrapper">
 						<?php
 							/**
-							 * Hook - lawcraft_action_footer.
+							 * Hook - lawfiz_action_footer.
 							 *
-							 * @hooked lawcraft_footer_copyrights - 10
+							 * @hooked lawfiz_footer_copyrights - 10
 							 */
-							do_action( 'lawcraft_action_footer' );
+							do_action( 'lawfiz_action_footer' );
 						?>
 					</div>
 				</div>

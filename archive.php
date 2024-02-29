@@ -4,17 +4,17 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 
 get_header();
-lawcraft_before_title();
-lawcraft_after_title();
+lawfiz_before_title();
+lawfiz_after_title();
 
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawfiz_header_menu_style','style1')); ?> content-area">
 	<main id="main" class="site-main" role="main">
 		<div class="content-inner">
 			<div id="blog-section">
@@ -23,7 +23,7 @@ lawcraft_after_title();
 		        		<h1 class="main-title"><?php the_archive_title(); ?></h1>
 		        	</div>
 		        	<?php
-		        		if('right'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
+		        		if('right'===esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))) {
 		        			?>
 		        				<div class="col-md-9">
 									<?php
@@ -53,7 +53,7 @@ lawcraft_after_title();
 					            </div>
 		        			<?php
 		        		}
-		        		else if('left'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
+		        		else if('left'===esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))) {
 		        			?>
 		        				<div class="col-md-3">
 					                <?php get_sidebar('sidebar-1'); ?>

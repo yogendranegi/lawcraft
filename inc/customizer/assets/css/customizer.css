@@ -21,11 +21,11 @@ input[type="textbox"] {
     padding-left: 10px;
 }
 
-#accordion-section-lawcraft_buy_settings h3.accordion-section-title {
+#accordion-section-lawfiz_buy_settings h3.accordion-section-title {
 	color: #bb4242;
 }
 
-#accordion-section-lawcraft_buy .accordion-section-title a {
+#accordion-section-lawfiz_buy .accordion-section-title a {
     padding: 0 5px !important;
 }
 
@@ -55,18 +55,18 @@ input[type="textbox"] {
     margin-bottom: 5px;
 }
 
-#input_lawcraft_header_menu_style .ui-button-text img {
+#input_lawfiz_header_menu_style .ui-button-text img {
     max-width: 250px !important;
     height: auto;
     display: inline-block !important;
 }
 
-#input_lawcraft_header_menu_style img {
+#input_lawfiz_header_menu_style img {
     max-width: 250px  !important;
     margin-bottom: 50px !important;
 }
 
-#input_lawcraft_highlight_area_columns label img {
+#input_lawfiz_highlight_area_columns label img {
     max-width: 85px !important;
     margin-right: 15px !important;
     height: auto;

@@ -4,28 +4,28 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package lawcraft
+ * @package lawfiz
  */
 
 get_header();
-lawcraft_before_title();
-do_action('lawyer_get_page_title',false,false,true,false);
-lawcraft_after_title();
+lawfiz_before_title();
+do_action('lawfiz_get_page_title',false,false,true,false);
+lawfiz_after_title();
 ?>
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawcraft_header_menu_style','style1')); ?> content-area">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('lawfiz_header_menu_style','style1')); ?> content-area">
     <main id="main" class="site-main" role="main">
         <div class="content-blog searchpage">
             <div class="content-inner">
                 <div class="row">
                     <?php
-                            if('right'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))) {
+                            if('right'===esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))) {
                                 ?>
                                     <div class="col-md-9">
                                         <div id="primary" class="content-area">
                                             <?php
                                             if(have_posts() ) : ?>
                                                 <div class="search-content">
-                                                    <h1 class="page-search"><?php printf( esc_html__('Search Results for: %s','lawcraft'),'<span>' .get_search_query() . '</span>' ); ?> </h1>
+                                                    <h1 class="page-search"><?php printf( esc_html__('Search Results for: %s','lawfiz'),'<span>' .get_search_query() . '</span>' ); ?> </h1>
                                                 </div>
                                                 <!-- .page-header -->
 
@@ -51,7 +51,7 @@ lawcraft_after_title();
                                     </div>
                                 <?php
                             }
-                                else if('left'===esc_html(get_theme_mod('lawcraft_blog_sidebar_layout','right'))){
+                                else if('left'===esc_html(get_theme_mod('lawfiz_blog_sidebar_layout','right'))){
                                     ?>
                                         <div class="col-md-3">
                                             <?php get_sidebar('sidebar-1'); ?>
@@ -61,7 +61,7 @@ lawcraft_after_title();
                                             if(have_posts()) : ?>
 
                                                 <div class="search-content">
-                                                    <h1 class="page-search"><?php printf(esc_html__('Search Results for: %s','lawcraft'),'<span>' . get_search_query(). '</span>')?></h1>
+                                                    <h1 class="page-search"><?php printf(esc_html__('Search Results for: %s','lawfiz'),'<span>' . get_search_query(). '</span>')?></h1>
                                                 </div>
                                                 <!-- page-header-->
 
@@ -92,7 +92,7 @@ lawcraft_after_title();
                                         <?php
                                         if(have_posts()): ?>
                                             <div class="search-content">
-                                                <h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'lawcraft' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                                                <h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'lawfiz' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                                             </div>
                                             <!-- page-header-->
                                             <?php

@@ -13,7 +13,7 @@
 
 ?>
 
-<header id="<?php echo esc_attr($page_val);?>-inner" class="elementer-menu-anchor theme-menu-wrapper full-width-menu style1 page" role="banner">
+<header id="<?php echo esc_attr($page_val);?>-inner" class="elementer-menu-anchor theme-menu-wrapper full-width-menu style2 page" role="banner">
     <?php
         if(true===get_theme_mod('lawfiz_enable_highlighted area',true) && is_front_page()){
             ?><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('skip to content','lawfiz'); ?> </a> <?php
@@ -100,6 +100,10 @@
                 <div class="col-md-9">
                     <div class="top-menu-wrapper">
                         <nav class="top-menu navbar navbar-expand-md" role="navigation" aria-label="<?php esc_attr_e('primary', 'lawfiz'); ?>">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'lawfiz'); ?>">
+                                <span class="sr-only"><?php esc_html_e('Toggle navigation', 'lawfiz'); ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                            </button>
                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                 <?php
                                     wp_nav_menu(array(
@@ -113,41 +117,48 @@
                                 ?>
                             </div>
                         </nav>
-
-                        <nav class="responsive-mobile">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                                <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body">
-                                    <div class="" id="navbar-collapse-2">
-                                        <?php
-                                            wp_nav_menu(array(
-                                                'theme_location' => 'primary',
-                                                'depth' => 3,
-                                                'container' => 'ul',
-                                                'container_class' => 'navbar-nav',
-                                                'container_id' => 'menu-primary',
-                                                'menu_class' => 'navigation',
-                                            ));
-                                        ?>
-                                    </div>
-                                    <form class="d-flex mt-3" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
-                        </nav>
                     </div>
                 </div>                
             </div>
         </div>
     </div>    
 </header>
+
+<!-- side bar -->
+<section id="hd-left-bar" class="hd-bar left-align   mCustomScrollbar" data-mcs-theme="dark">
+       <div class="hd-bar-closer">
+            <butoon>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>    
+            <span class="qb-close-buttton"></span></button>
+       </div>
+       <div class="hd-bar-wrapper">
+            <div class="side-menu">
+                <?php
+                    /**
+		              * Hook - lawfiz_action_search_content
+		              *
+		            * @hooked lawfiz_search_content - 10
+		            */
+                    do_action('lawfiz_action_search_content');
+                ?>
+                <nav role="navigation">
+                    <div class="side-navigation clearfix" id="navbar-collapse-2">
+                        <?php
+                            wp_nav_menu(array(
+                                'theme_location' =>'primary',
+                                'depth'          => 3,
+                                'container'      =>'ul',
+                                'container_class'=>'navigation',
+                                'container_id'   =>'menu-primary-mobile',
+                                'menu_class'     =>'navigation',
+                                )
+                            );
+                        ?>
+                    </div>
+                </nav>
+            </div>
+     </div>
+</section>
 
 <div class="clearfix"></div>
 <div id="content" class="elementor-menu-anchor"></div>
@@ -163,4 +174,5 @@
     }
 ?>
 <div class="content-wrap">
+    <div class="container">
 

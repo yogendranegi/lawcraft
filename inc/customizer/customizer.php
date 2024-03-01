@@ -68,6 +68,9 @@ add_action( 'customize_register', 'lawfiz_customize_register' );
 //blog settings
 get_template_part( 'inc/customizer/options/section-blog' );
 
+//header settings
+get_template_part( 'inc/customizer/options/section-header' );
+
 //footer settings
 get_template_part( 'inc/customizer/options/section-footer' );
 

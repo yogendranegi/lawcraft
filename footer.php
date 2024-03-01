@@ -10,7 +10,7 @@
  */
 
 ?>
-	</div>
+	
 	<!-- Begin Footer Section -->
 	<footer id="footer" class="lawfiz-footer" itemscope itemtype="https://schema.org/WPFooter">
 		<div class="container footer-widgets">
